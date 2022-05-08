@@ -1,0 +1,86 @@
+@font-face {
+    font-family: 'Alycidon-Condensed';
+    src: url(alycidon/Alycidon-Condensed.otf);
+}
+
+
+body {
+    background-repeat: no-repeat;
+    background-image: url(img/b.jpg);
+    height: 100vh;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+   
+    
+    
+}
+
+.imagem_index img {
+    height: 100vh;
+    width: 100%;
+    z-index: -1;
+    position: fixed;
+   
+}
+
+.titulo_index {
+    margin-top: 1%;
+    height: 20%;
+    width: 37%;
+    position: absolute;
+    font-family: 'Alycidon-Condensed';
+    font-size: 160px;
+    margin-left: 57%;
+    color: rgb(0, 0, 0);
+
+}
+
+.box_index {
+    height: 40%;
+    width: 30%;
+    margin-left: 60%;
+    margin-top: 17%;
+
+}
+
+#bt_visitar {
+    font-size: 28px;
+    background-color: rgb(0, 0, 0);
+    color: rgba(245, 245, 245, 0.664);
+    font-family: A;
+    width: 35%;
+    height: 17%;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: rgb(82, 79, 79);
+    margin-left: 10% ;
+    margin-top: 70%;
+}
+
+#bt_visitar:hover {
+    width: 38%;
+    height:20% ;
+    margin-top:67% ;
+    margin-left: 8% ;
+    transition: 0.5s;
+    font-size: 31px;
+}
+
+#bt_entrar {
+    font-size: 28px;
+    background-color: rgb(0, 0, 0);
+    color: rgba(245, 245, 245, 0.664);
+    font-family: A;
+    width: 35%;
+    height: 17%;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: rgb(82, 79, 79);
+    margin-left: 15% ;
+    margin-top: 70%;
+}
+
+
+
