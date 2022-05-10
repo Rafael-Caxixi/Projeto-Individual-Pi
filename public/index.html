@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="index_style.css">
-    <link rel="stylesheet" href="index.js">
+    <script src="main.js"></script>
 </head>
 
 <body>
@@ -15,7 +15,7 @@
     <div>
         <div class="imagem_index">
 
-            <div class="caixa_branca">
+            <div class="caixa_branca" id="caixa_branca_cadastro" style="display:block ;">
                 <div id="div_trocar">
                     <div class="faca_parte">Faça parte da nossa comunidade</div> <br><br>
 
@@ -38,26 +38,60 @@
                         <div class="quinta_input">
                             <input class="inputs" id="input_senha" placeholder="Senha" type="password"> <img
                                 id="imagem_mostar_senha" onclick="mostrar_senha()"
-                                src="http://i.stack.imgur.com/H9Sb2.png">
+                                src="http://i.stack.imgur.com/H9Sb2.png" draggable="false">
 
                         </div> <br>
                         <div class="sexta_input">
                             <input class="inputs" id="input_confirmar_senha" placeholder="Confirmar Senha:"
-                                type="password"><img id="imagem_mostar_senha" onclick="mostrar_confirmar_senha()"
+                                type="password"><img draggable="false" id="imagem_mostar_senha" onclick="mostrar_confirmar_senha()"
                                 src="http://i.stack.imgur.com/H9Sb2.png">
                         </div>
 
                     </div> <br> <br><br><br><br><br><br><br><br><br>
 
                     <div class="frase_botao_cadastro">
-                        Ja é cadastrado? <a onclick="funcao_clique_aqui()" style="cursor:pointer ;"><b>Clique aqui</b></a>
+                        Ja é cadastrado? <a onclick="funcao_clique_aqui()" style="cursor:pointer ;"><b>Clique
+                                aqui</b></a>
                     </div>
                     <div class="div_botao_cadastro">
                         <button onclick="cadastrar()" id="id_botao_cadastro">Cadastrar-Se</button>
                     </div>
 
                 </div>
-                <!-- HTML do LOGIN -->
+                <!-- HTML do LOGIN agora -->
+                <div class="caixa_branca_login" id="trocar_p_login" style="display: none;">
+                    <div class="titulo">
+                        <div class="imagem_login"><img onclick="imagem_voltar_cadastro()"
+                                src="https://cdn-icons-png.flaticon.com/512/63/63199.png"
+                                style="height:50px;cursor: pointer;"></div>
+                        <div class="texto_titulo">Login</div>
+                    </div>
+                    <div class="div_email_login">
+                        Endereço de e-mail:
+                    </div>
+                    <div class="div_input_email_login">
+                        <input class="inputs" id="input_email_login" placeholder="E-mail">
+                    </div> <br>
+                    <div class="div_senha_login">
+                        Senha:
+                    </div>
+                    <div class="div_input_senha_login">
+                        <input class="inputs" id="input_senha_login" type="password" placeholder="Senha">
+                        <img id="imagem_mostar_senha" onclick="mostrar_confirmar_senha_login()"
+                            src="http://i.stack.imgur.com/H9Sb2.png">
+                    </div><br>
+
+
+
+                    <div class="div_botao_login">
+                        <button id="botao_login" onclick="funcao_login()">Log-in</button>
+                    </div>
+
+                </div>
+
+
+
+
             </div>
         </div>
 
@@ -72,30 +106,5 @@
 
 <script>
 
-    function mostrar_senha() {
-        var x = document.getElementById("input_senha");
-        if (x.type === "password") {
-            x.type = "text";
-        }
-        else {
-            x.type = "password"
-        }
-
-    }
-
-    function mostrar_confirmar_senha() {
-        var z = document.getElementById("input_confirmar_senha");
-        if (z.type === "password") {
-            z.type = "text";
-        }
-        else {
-            z.type = "password"
-        }
-
-     }    
-    
-    function funcao_clique_aqui() {
-        div_trocar.style.display = 'none'
-    }
 
 </script>
