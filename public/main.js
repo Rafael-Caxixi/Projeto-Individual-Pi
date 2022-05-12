@@ -78,6 +78,66 @@ function funcao_clique_aqui() {
  }
 
 
+ function validar_nome() {
+    if(input_nome.value.length <= 3) {
+        input_nome.style.borderColor = 'red'
+    }
+    else {
+        input_nome.style.borderColor = 'green'
+    }
+}
+
+function validar_cpf() {
+    if(input_cpf.value.length < 11) {
+        input_cpf.style.borderColor = 'red'
+    }
+    else {
+        input_cpf.style.borderColor = 'green'
+    }
+}
+
+function validar_email() {
+    if(input_email.value.indexOf("@") < 0) {
+        input_email.style.borderColor = 'red'
+    }
+    else {
+        input_email.style.borderColor = 'green'
+    }
+}
+
+function validar_cep() {
+    if(input_cep.value.length < 8) {
+        input_cep.style.borderColor = 'red'
+    }
+    else {
+        input_cep.style.borderColor = 'green'
+    }
+}
+
+function validar_senha() {
+    if(input_senha.value.length < 8) {
+        input_senha.style.borderColor = 'red'
+    }
+    
+    else {
+        input_senha.style.borderColor = 'green'
+    }
+}
+
+function validar_confirmar_senha() {
+    if(input_confirmar_senha.value != input_senha.value) {
+        input_confirmar_senha.style.borderColor = 'red'
+    }else if(input_confirmar_senha.value == "") {
+        input_confirmar_senha.style.borderColor = 'black'
+    }
+    else {
+        input_confirmar_senha.style.borderColor = 'green'
+    }
+}
+
+
+
+
 
  function cadastrar() {
      var var_nome = input_nome.value
@@ -108,12 +168,17 @@ function funcao_clique_aqui() {
         alert("Preencha corretamente o CEP")
     }
     else if (var_senha.length < 8) {
+        input_senha.style.borderColor = 'red'
+        input_senha.style.borderWidth = '3px'
         alert("É obrigatório pelo menos 8 caracteres na senha")
     }
     else if(var_confirmar_senha != var_senha) {
-        alert("Senhas diferentes")
+        input_confirmar_senha.style.borderColor = 'red'
+        input_confirmar_senha.style.borderWidth = '3px'
+        alert("Senhas diferentes ou incorretas")
     }
     else {
+        alert("Seja Bem-vindo")
         fetch("/usuarios/cadastrar", {
             method: "POST",
             headers: {
@@ -158,3 +223,61 @@ function funcao_clique_aqui() {
     }
 
  }
+
+
+ 
+ function entrar() {
+
+    var emailVar = input_email_login.value;
+    var senhaVar = input_senha_login.value;
+
+    if (emailVar == "" || senhaVar == "") {
+       alert("Preencha os campos corretamente")
+    }
+    else {
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                emailServer: emailVar,
+                senhaServer: senhaVar
+            })
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO entrar()!")
+    
+            if (resposta.ok) {
+                console.log(resposta);
+    
+                resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+    
+                    sessionStorage.EMAIL_USUARIO = json.email_usuario;
+                    sessionStorage.NOME_USUARIO = json.nome_usuario;
+                    sessionStorage.ID_USUARIO = json.id_usuario;
+    
+                    setTimeout(function () {
+                        window.location = "secao_sobre.html";
+                    }, 1000); // apenas para exibir o loading
+    
+                });
+    
+            } else {
+    
+                console.log("Houve um erro ao tentar realizar o login!");
+    
+                resposta.text().then(texto => {
+                    console.error(texto);
+                });
+            }
+    
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+
+    }    
+
+
+}

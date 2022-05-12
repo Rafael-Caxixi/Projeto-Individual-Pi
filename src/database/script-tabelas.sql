@@ -1,60 +1,23 @@
--- Arquivo de apoio, caso você queira criar tabelas como as aqui criadas para a API funcionar.
--- Você precisa executar os comandos no banco de dados para criar as tabelas,
--- ter este arquivo aqui não significa que a tabela em seu BD estará como abaixo!
+create database peaky_blinders;
 
-/* para workbench - local - desenvolvimento */
-CREATE DATABASE acquatec;
+use peaky_blinders;
 
-USE acquatec;
+create table personagem (
+id_personagem int primary key auto_increment,
+nome_personagem varchar(45),
+qtd_votos int );
 
-CREATE TABLE usuario (
-	id INT PRIMARY KEY AUTO_INCREMENT,
-	nome VARCHAR(50),
-	email VARCHAR(50),
-	senha VARCHAR(50)
-);
+create table usuario (
+id_usuario int primary key auto_increment,
+nome_usuario varchar(45),
+cpf_usuario varchar(45),
+email_usuario varchar(45),
+cep_usuario varchar(45),
+senha_usuario varchar(45),
+fk_personagem int,
+foreign key (fk_personagem) references personagem (id_personagem) );
 
-CREATE TABLE aviso (
-	id INT PRIMARY KEY AUTO_INCREMENT,
-	titulo VARCHAR(100),
-    descricao VARCHAR(150),
-	fk_usuario INT,
-	FOREIGN KEY (fk_usuario) REFERENCES usuario(id)
-); 
-
-CREATE TABLE medida (
-	id INT PRIMARY KEY AUTO_INCREMENT,
-	temperatura DOUBLE,
-	umidade DOUBLE,
-	momento DATETIME,
-	fk_aquario INT
-);
-
-
-
-
-/* para sql server - remoto - produção */
-
-CREATE TABLE usuario (
-	id INT PRIMARY KEY IDENTITY(1,1),
-	nome VARCHAR(50),
-	email VARCHAR(50),
-	senha VARCHAR(50),
-);
-
-CREATE TABLE aviso (
-	id INT PRIMARY KEY IDENTITY(1,1),
-	titulo VARCHAR(100),
-    descricao VARCHAR(150),
-	fk_usuario INT FOREIGN KEY REFERENCES usuario(id)
-); 
-
-CREATE TABLE medida (
-	id INT PRIMARY KEY IDENTITY(1,1),
-	temperatura DECIMAL,
-	umidade DECIMAL,
-	momento DATETIME,
-	fk_aquario INT
-);
-
-
+create table comentario (
+fk_usuario int,
+foreign key (fk_usuario) references usuario (id_usuario),
+comentario_usuario varchar(200) );

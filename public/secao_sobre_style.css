@@ -1,0 +1,18 @@
+body {
+    background-color: #0d1117;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    background-color: black;
+    height: 98.5vh;
+    width: 98.5vw;
+    width: 70%;
+    
+    
+}
+
+element::-webkit-scrollbar {
+    display:none;
+  }
