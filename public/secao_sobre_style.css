@@ -1,18 +1,189 @@
+@import url('http://fonts.cdnfonts.com/css/alycidon');
+/* font-family: 'Alycidon', sans-serif; */  /* Fonte do peaky blinders */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,100&display=swap');
+/* font-family: 'Roboto', sans-serif; */
+
+::-webkit-scrollbar {
+    width: 15px;
+    height: 80px;
+    
+  }
+
+  ::-webkit-scrollbar-track {
+    background: black;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: rgba(245, 245, 245, 0.705);
+    border-radius: 15px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+   
+  }
+
+
 body {
-    background-color: #0d1117;
+    margin: 0;
+    padding: 0;  
+    font-family: 'Roboto', sans-serif;
+}
+
+
+
+.imagem_fundo img {
+  background-image: url(https://blog.enem.com.br/wp-content/uploads/2020/05/capa-materia-peaky-1024x683.jpg);
+  position: fixed;
+  height: 100vh;
+  width: 100vw;  
+  z-index: -1;
+  margin-top: -13vh;
+}
+
+
+.navbar {
+    background: rgb(132,71,140);
+    background: linear-gradient(90deg, rgba(132,71,140,1) 0%, rgba(2,0,36,1) 100%);
+    height: 13vh;
+    width:70%;
+    position: fixed;
+    margin-left: 15.2%;
+    margin-top: -13vh;
+    text-shadow:rgb(228, 202, 226) ;
+  }
+
+  .div_pb {
+    width: 40%;
+    height: 100%;
+    font-size: 60px;    
+    float: left;
+    transition: all 1s;
+    align-items: center;
+    display: flex;
+    font-family: 'Alycidon', sans-serif; 
+  }
+
+  .div_pb a {
+    color: rgb(0, 0, 0);
+    margin-left: 25%;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.5s;
+    text-shadow: #ffffff86 2px 3px 4px;
+    font-family: 'Alycidon', sans-serif; 
+  }
+
+  .links_navbar {
+   height: 100%;
+   width: 60%;
+   display: flex;
+   justify-content: center;
+   color: white;
+  }
+  
+  .links_navbar a {
+    margin: 5%;
+    font-size: 25px;
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.884);
+    font-weight: bold;
+  }
+  
+  .links_navbar a:hover {
+    text-decoration: underline;
+  }
+  
+  .container {
+      background-color: black;
+      height: 200vh;
+      width: 98vh;
+      width: 70%;
+      display: flex;
+      flex-direction: column;
+      margin-top: 13vh;
+      margin-left: 15vw;
+  }
+
+  .div_info_usuario {
+    height: 20vh;
+    width: 100%;
+  }
+
+  .div_nome {
+    width: 100%;
+    height: 50%;
     display: flex;
     justify-content: center;
-}
-
-.container {
-    background-color: black;
-    height: 98.5vh;
-    width: 98.5vw;
-    width: 70%;
-    
-    
-}
-
-element::-webkit-scrollbar {
-    display:none;
+    align-items:flex-end;
+    font-size: 25px;
+    font-weight: bold;
+    color: white;
   }
+
+  .div_nome b {
+    color: #ffc500;
+  }
+
+  .div_perso_votado {
+    color: white;
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    font-weight: bold;
+  }
+
+  .div_perso_votado b {
+    color: #ffc500;
+  }
+
+  .escolha_perso {
+    height: 10vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  .frase_escolha {
+    background-color: rgb(40, 40, 51);
+    height: 5vh;
+    width: 38%;
+    border-radius: 13px;
+   
+  }
+
+  .frase_escolha b {
+    margin-left: 5%;
+    font-size: 25px;
+    color: white;
+    margin-left: 10%;
+  }
+
+  .frase_personagens {
+    height: 10vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .frase_personagens b {
+    color: #ffc500;
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+
+ 
+
+  
+  
+  
+  
+  
+  
+  
