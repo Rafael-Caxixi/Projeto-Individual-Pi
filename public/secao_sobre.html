@@ -8,11 +8,13 @@
     <title>Fórum | Peaky Blinder - Login</title>
     <link rel="stylesheet" href="secao_sobre_style.css">
     <script src="secao_sobre.js"></script>
+    <script src="main.js"></script>
 </head>
 
 <body>
     <div class="imagem_fundo">
-        <img src="https://blog.enem.com.br/wp-content/uploads/2020/05/capa-materia-peaky-1024x683.jpg">
+        <img src="img/imagem_fundo_home.jpg"
+            id="imagem_fundo">
 
 
         <div class="navbar">
@@ -22,8 +24,9 @@
 
             <div class="links_navbar">
                 <a href="#">Home</a>
-                <a href="#">Classificação</a>
-                <a href="#">Comunidade</a>
+                <a href="classificacao.html">Classificação</a>
+                <a href="comunidade.html">Comunidade</a>
+                <a href="#" onclick="sair_cadastro()">Sair</a>
             </div>
         </div>
 
@@ -31,7 +34,7 @@
 
             <div class="div_info_usuario">
                 <div class="div_nome">
-                    Olá,<b> <span id="nome_usuario">Rafael Caxixi</span>!</b>
+                    Olá,<b><span id="span_nome_usuario">Rafael Caxixi</span>!</b>
                 </div>
                 <div class="div_perso_votado">
                     Personagem escolhido: <b><span id="nome_personagem_votado"> Thomas Shelby</span></b>
@@ -46,7 +49,81 @@
                 <b>Personagens</b>
             </div>
 
-        </div>
+            <!-- CArrosel -->
+
+            <div class="slider">
+
+                <div class="slides">
+                    <!-- Radios -->
+                    <input type="radio" name="radio-btn" id="radio1">
+                    <input type="radio" name="radio-btn" id="radio2">
+                    <input type="radio" name="radio-btn" id="radio3">
+
+                    <!-- FIm radios -->
+
+                    <!-- Imagens -->
+                    <div class="slide first" id="img1">
+                        <img src="img/arthur_carrossel.webp" onclick="funcao_arthur()" style="cursor:pointer;"
+                            id="imagem_arthur_carrosel">
+                        <img src="img/thommy_carrossel.webp" onclick="funcao_thommy()" style="cursor:pointer;"
+                            id="imagem_thommy_carrosel">
+                        <img src="img/John_carrossel.webp" onclick="funcao_john()" style="cursor:pointer;"
+                            id="imagem_john_carrosel">
+                    </div>
+
+                    <div class="slide"  id="img2">
+                        <img src="img/Finn_carrossel.webp" onclick="funcao_finn()" style="cursor:pointer;"
+                            id="imagem_finn_carrossel">
+                        <img src="img/Polly_carrossel.webp" onclick="funcao_polly()" style="cursor:pointer;"
+                            id="imagem_polly_carrossel">
+                        <img src="img/Ada_carrossel.webp" onclick="funcao_ada()" style="cursor:pointer;"
+                            id="imagem_ada_carrossel">
+                    </div>
+
+
+                    <div class="slide"  id="img3">
+                        <img src="img/Alfie_carrossel.webp" onclick="funcao_alfie()" style="cursor:pointer;"
+                            id="imagem_alfie_carrossel">
+                        <img src="img/Michael_carrossel.webp" onclick="funcao_michael()" style="cursor:pointer;"
+                            id="imagem_michael_carrossel">
+                        <img src="img/Lizzie_carrossel.webp" onclick="funcao_lizzie()" style="cursor:pointer;"
+                            id="imagem_lizzie_carrossel">
+                    </div>
+                    <!-- FIm imagens -->
+
+                    <!-- Navigation auto -->
+
+                    <div class="navigation-auto">
+                        <div class="auto-btn1"></div>
+                        <div class="auto-btn2"></div>
+                        <div class="auto-btn3"></div>
+                    </div>
+
+                </div>
+
+                <div class="manual-navigation">
+                    <label for="radio1" class="manual-btn"></label>
+                    <label for="radio2" class="manual-btn"></label>
+                    <label for="radio3" class="manual-btn"></label>
+                </div>
+
+            </div>
+
+            <!--  HTML QUIZ  -->
+            
+            
+
+
+<!-- 
+            <div class="div_footer">
+                Feito por Rafael Caxixi © 2022
+
+            </div> -->
+        </div> <!-- Container -->
+
+
+
+
     </div>
 </body>
 

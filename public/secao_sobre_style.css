@@ -33,7 +33,7 @@ body {
 
 
 
-.imagem_fundo img {
+#imagem_fundo {
   background-image: url(https://blog.enem.com.br/wp-content/uploads/2020/05/capa-materia-peaky-1024x683.jpg);
   position: fixed;
   height: 100vh;
@@ -55,7 +55,7 @@ body {
   }
 
   .div_pb {
-    width: 40%;
+    width: 30%;
     height: 100%;
     font-size: 60px;    
     float: left;
@@ -77,10 +77,12 @@ body {
 
   .links_navbar {
    height: 100%;
-   width: 60%;
+   width: 70%;
    display: flex;
    justify-content: center;
    color: white;
+   
+
   }
   
   .links_navbar a {
@@ -96,12 +98,12 @@ body {
   }
   
   .container {
-      background-color: black;
-      height: 200vh;
-      width: 98vh;
+      background-color: #161720e8;
+      height: 97.9vh;
       width: 70%;
       display: flex;
       flex-direction: column;
+      align-items: center;
       margin-top: 13vh;
       margin-left: 15vw;
   }
@@ -120,6 +122,7 @@ body {
     font-size: 25px;
     font-weight: bold;
     color: white;
+    margin-top: 1%;
   }
 
   .div_nome b {
@@ -146,6 +149,7 @@ body {
     width: 100%;
     display: flex;
     align-items: center;
+    margin-top: 3%;
   }
 
   .frase_escolha {
@@ -175,12 +179,118 @@ body {
     color: #ffc500;
     font-size: 28px;
     font-weight: bold;
+    margin-bottom: 30px;
+    margin-top: 30px;
+  }
+
+  .slider {
+    margin: 0 auto;
+    width: 400px;
+    height: 889px; 
+    overflow: hidden;
+  }
+
+  .slides {
+    width: 1500px;
+    height: 230px;
+    display: flex;
+  }
+
+  .slides input {
+    display: none;
+  }
+
+  .slide {
+    width: 100%;
+  }
+
+  .manual-navigation {
+    width: 400px;
+    margin-top: -40px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .manual-btn {
+    border: 2px solid #FFF;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 1s;
+  }
+
+  .manual-btn:not(:last-child){
+    margin-right: 40px;
+  }
+
+  .manual-btn:hover {
+    background-color: #FFF;
+  }
+
+  #radio1:checked ~ .first {
+    margin-left: 0;
+  }
+
+  #radio2:checked ~ .first {
+    margin-left: -50%;
+  }
+
+  #radio3:checked ~ .first {
+    margin-left: -200%;
+  }
+
+  /* .navigation-auto div {
+    border: 2px solid #20a6ff;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 1s;
+  } */
+
+  .navigation-auto {
+    position: absolute;
+    width: 400px;
+    margin-top: 190px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .navigation-auto div:not(:last-child) {
+    margin-right: 40px;
+  }
+
+  #radio1:checked ~ .navigation-auto .auto-btn1 {
+    background-color: #FFF;
   }
 
 
- 
+  #radio2:checked ~ .navigation-auto .auto-btn2 {
+    background-color: #FFF;
+    
+  }
 
-  
+
+  #radio3:checked ~ .navigation-auto .auto-btn3 {
+    background-color: #FFF;
+  }
+
+  .slide img  {
+    height: 206px;
+  }
+
+ /* .div_footer {
+   background-color: black;
+   color: white;
+   font-weight: bold;
+   height: 10vh;
+   width: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin-top: 17vh ;
+   font-size: 20px;
+ }
+ */
   
   
   

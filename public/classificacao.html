@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="classificacao_style.css">
+    <link rel="stylesheet" href="classificacao.js">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+    <div class="imagem_fundo">
+        <img src="img/imagem_fundo_home.jpg" id="id_imagem_fundo" draggable="false">
+
+    </div>
+    <div class="navbar">
+        <div class="div_pb">
+            <a href="#inicio">Peaky Blinders</a>
+        </div>
+
+        <div class="links_navbar">
+            <a href="secao_sobre.html">Home</a>
+            <a href="classificacao.html">Classificação</a>
+            <a href="#">Comunidade</a>
+            <a href="#" onclick="sair_cadastro()">Sair</a>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <div class="titulo_lideranca">
+            <div class="txt_lideranca">
+               Top 5 escolhidos
+            </div>
+        </div>
+
+        <div>
+            <canvas id="myChart_lider" style="position:relative; height: 400px; width: 400px;"></canvas>
+          </div>
+           
+
+    </div> <!-- Container -->
+
+
+
+
+
+</body>
+
+</html>
+
+    <script>
+
+
+  const data = {
+  labels: [
+    'Thommy',
+    'Arthur',
+    'John',
+    'Finn',
+    'Polly'
+  ],
+  datasets: [{
+    label: 'My First Dataset',
+    data: [10, 30, 5, 25, 30],
+    backgroundColor: [
+      'rgb(255, 99, 132)',
+      'rgb(54, 162, 235)',
+      'green',
+      'yellow',
+      'red'
+    ],
+    hoverOffset: 4
+  }]
+};
+
+  const config = {
+    type: 'pie',
+    data: data,
+    options: {}
+  };
+</script>
+
+<script>
+    const myChart = new Chart(
+      document.getElementById('myChart_lider'),
+      config
+    );
+  </script>
+   

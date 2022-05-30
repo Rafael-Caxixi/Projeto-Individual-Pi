@@ -281,3 +281,21 @@ function validar_confirmar_senha() {
 
 
 }
+
+
+function validarSessao() {
+    // aguardar();
+
+    var nome = sessionStorage.NOME_USUARIO;
+
+    var span_nome_usuario = document.getElementById("span_nome_usuario");
+
+    if (email != null && nome != null) {
+        // window.alert(`Seja bem-vindo, ${nome}!`);
+        span_nome_usuario.innerHTML = nome;
+
+        // finalizarAguardar();
+    } else {
+        window.location = "../login.html";
+    }
+}
