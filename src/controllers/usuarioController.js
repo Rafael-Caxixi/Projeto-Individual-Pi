@@ -97,9 +97,53 @@ function cadastrar(req, res) {
     }
 }
 
+function escolher_perso(req, res) {
+    var id_personagem = req.body.idPersonagemServer;
+    var id_usuario = req.body.idUsuarioServer;
+    
+    if (id_personagem== undefined) {
+        res.status(400).send("Seu email está undefined!");
+    } else if (id_usuario == undefined) {
+        res.status(400).send("Sua senha está indefinida!");
+    } else {
+        
+        usuarioModel.escolher_perso(id_usuario, id_personagem)
+            .then(
+                function (resultado) {
+                    res.json(resultado)
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log("\nHouve um erro ao atualizar personagem! Erro: ", erro.sqlMessage);
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    }
+
+}
+
+function escolher_lideres(req, res) {
+    usuarioModel.escolher_lideres().then(function (resultado) {
+        if (resultado.length > 0) {
+            res.status(200).json(resultado);
+        } else {
+            res.status(204).send("Nenhum resultado encontrado!")
+        }
+    }).catch(function (erro) {
+        console.log(erro);
+        console.log("Houve um erro ao buscar os avisos: ", erro.sqlMessage);
+        res.status(500).json(erro.sqlMessage);
+    });
+}
+
+
+
 module.exports = {
     entrar,
     cadastrar,
     listar,
-    testar
+    testar,
+    escolher_perso,
+    escolher_lideres
 }

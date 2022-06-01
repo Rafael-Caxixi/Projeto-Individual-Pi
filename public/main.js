@@ -146,8 +146,9 @@ function validar_confirmar_senha() {
      var var_cep = input_cep.value
      var var_senha = input_senha.value
      var var_confirmar_senha = input_confirmar_senha.value
+    
 
-    if(var_nome.length <= 3) {
+    if(var_nome.length <= 2) {
         input_nome.style.borderColor = 'red'
         input_nome.style.borderWidth = '3px'
         alert("Insira nome com mais de 3 caracteres")
@@ -192,6 +193,7 @@ function validar_confirmar_senha() {
                 emailServer: var_email,
                 cepServer: var_cep,
                 senhaServer: var_senha
+                
                
 
             })
@@ -257,6 +259,7 @@ function validar_confirmar_senha() {
                     sessionStorage.EMAIL_USUARIO = json.email_usuario;
                     sessionStorage.NOME_USUARIO = json.nome_usuario;
                     sessionStorage.ID_USUARIO = json.id_usuario;
+                    sessionStorage.NOME_PERSONAGEM = json.nome_personagem;
     
                     setTimeout(function () {
                         window.location = "secao_sobre.html";
@@ -267,6 +270,7 @@ function validar_confirmar_senha() {
             } else {
     
                 console.log("Houve um erro ao tentar realizar o login!");
+                alert("Erro ao efetuar login")
     
                 resposta.text().then(texto => {
                     console.error(texto);
@@ -282,20 +286,24 @@ function validar_confirmar_senha() {
 
 }
 
-
+/* 
 function validarSessao() {
     // aguardar();
-
+    console.log("Chamei validae sessao dentro do main.js")
     var nome = sessionStorage.NOME_USUARIO;
+    var pick_perso = sessionStorage.imagem_arthur_carrosel
 
     var span_nome_usuario = document.getElementById("span_nome_usuario");
+    var nome_personagem_votado = document.getElementById("nome_personagem_votado")
 
-    if (email != null && nome != null) {
+    if (nome != null) {
         // window.alert(`Seja bem-vindo, ${nome}!`);
         span_nome_usuario.innerHTML = nome;
+        span_personagem_votado.innerHTML = pick_perso
 
         // finalizarAguardar();
     } else {
         window.location = "../login.html";
     }
 }
+ */

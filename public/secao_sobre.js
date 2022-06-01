@@ -1,86 +1,205 @@
- function sair_cadastro() {
+function sair_cadastro() {
     sessionStorage.clear()
     alert("Volte sempre")
     window.location = "index.html"
 }
 
+
+
+/* Funcao carrossel */
+
+var check = ""
+var radio1 = document.getElementById("radio1")
 let count = 1;
-document.getElementById("radio1").checked = true;
-
-setInterval( function(){
+var rodagem = 0
+setInterval(function () {
     nextImage();
-}, 2000)
+}, 3000)
 
-function nextImage(){
-    count++
-    if(count > 3){
-        count = 1
+function nextImage() {
+    if (rodagem == 0) {
+
+        count++
+        if (count == 4) {
+            rodagem = 1
+            count--
+        }
+
+    }
+    if (rodagem == 1) {
+        count--
+        if (count == 0) {
+            rodagem = 0
+            count++
+            count++
+        }
     }
     document.getElementById("radio" + count).checked = true
+    check = document.getElementById("radio" + count).checked
+    if (count == 3) {
+        document.getElementById("label" + count).style.backgroundColor = "white"
+        document.getElementById("label" + 2).style.backgroundColor = "transparent"
+        document.getElementById("label" + 1).style.backgroundColor = "transparent"
+    }
+   else if (count == 2) {
+        document.getElementById("label" + count).style.backgroundColor = "white"
+        document.getElementById("label" + 3).style.backgroundColor = "transparent"
+        document.getElementById("label" + 1).style.backgroundColor = "transparent"
+    }
+   else if (count == 1) {
+        document.getElementById("label" + count).style.backgroundColor = "white"
+        document.getElementById("label" + 2).style.backgroundColor = "transparent"
+        document.getElementById("label" + 3).style.backgroundColor = "transparent"
+    }
+
+
+   
+
+} 
+/* Fim Funcao carrossel */
+/* 
+function validarSessao() {
+    // aguardar();
+
+    console.log("Chamei validar sessao")
+    var nome = sessionStorage.NOME_USUARIO;
+    var pick_perso = sessionStorage.imagem_arthur_carrosel
+
+    var nome_usuario = document.getElementById("nome_usuario");
+    var nome_personagem_votado = document.getElementById("nome_personagem_votado")
+    span_personagem_votado.innerHTML = pick_perso
+
+
+    nome_usuario.innerHTML = nome;
+} */
+
+var slide_1 = document.getElementById("img1")
+var slide_2 = document.getElementById("img2")
+var slide_3 = document.getElementById("img3")
+
+function input1() {
+   
+   
+} 
+
+function input2() {
+    
+
+}
+
+function input3() {
+    /* slide_1.classList.remove("first");
+    slide_2.classList.add("first"); */
+    
 }
 
 
+fetch("/usuarios/autenticar", {
+    method: "POST",
+    headers: {
+        "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+        emailServer: emailVar,
+        senhaServer: senhaVar
+    })
+}).then(function (resposta) {
+    console.log("ESTOU NO THEN DO entrar()!")
 
-/* 
+    if (resposta.ok) {
+        console.log(resposta);
 
- 
-    function imgs() {
-        var lista_img1 = "slide first"
-      ["url(img/arthur_carrossel.webp)",
-        "url(img/thommy_carrossel.webp)",
-        "url(img/John_carrossel.webp)"] 
+        resposta.json().then(json => {
+            console.log(json);
+            console.log(JSON.stringify(json));
 
-    var lista_img2 = "slide"
-   ["urlimg/Finn_carrossel.webp()",
-    "url(img/Polly_carrossel.webp)",
-    "url(img/Ada_carrossel.webp)"]
+            sessionStorage.EMAIL_USUARIO = json.email_usuario;
+            sessionStorage.NOME_USUARIO = json.nome_usuario;
+            sessionStorage.ID_USUARIO = json.id_usuario;
 
-    var lista_img3 = "slide"
-   ["url(img/Alfie_carrossel.webp)",
-    "url(img/Michael_carrossel.webp)",
-    "url(img/Lizzie_carrossel.webp)"]
 
-    var posicao = 0
-       
+            setTimeout(function () {
+                window.location = "secao_sobre.html";
+            }, 1000); // apenas para exibir o loading
 
-            if(posicao == 0){
-              
-               imagem_arthur_carrosel.style.backgroundImage = lista_img1[posicao]
-                imagem_thommy_carrosel.style.backgroundImage = lista_img1[posicao + 1]
-                imagem_john_carrosel.style.backgroundImage = lista_img1[posicao + 2]
-                posicao++
-            }
-            else if(posicao == 1) {
-                imagem_arthur_carrosel.style.backgroundImage = lista_img2[posicao]
-                imagem_thommy_carrosel.style.backgroundImage = lista_img2[posicao + 1]
-                imagem_john_carrosel.style.backgroundImage = lista_img2[posicao + 2]
-                posicao++
-            }
-            else {
-                imagem_arthur_carrosel.style.backgroundImage = lista_img3[posicao]
-                imagem_thommy_carrosel.style.backgroundImage = lista_img3[posicao + 1]
-                imagem_john_carrosel.style.backgroundImage = lista_img3[posicao + 2]
-                posicao = 0          
-            }
-        }
-     
+        });
 
-    
-    setInterval(function(){
-        imgs();
-    },3000)
- */
+    } else {
 
-    function validarSessao() {
-        // aguardar();
-    
-        var nome = sessionStorage.var_nome;
-    
-        var nome_usuario = document.getElementById("nome_usuario");
-    
-    
-            nome_usuario.innerHTML = nome;
-    
-            
-      
+        console.log("Houve um erro ao tentar realizar o login!");
+
+        resposta.text().then(texto => {
+            console.error(texto);
+        });
     }
+
+}).catch(function (erro) {
+    console.log(erro);
+})
+
+/* Escolha perso */
+
+function escolher_perso(num) {
+
+    var id_usuario = sessionStorage.ID_USUARIO
+
+    fetch(`/usuarios/escolher_perso`, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            idPersonagemServer: num,
+            idUsuarioServer: id_usuario
+        })
+    }).then(function (resposta) {
+        console.log("ESTOU NO THEN DO escolher_perso()!")
+
+        console.log("resposta: ", resposta)
+
+        if (resposta.ok) {
+            console.log(resposta);
+            alert('Personagem atualizado')
+            if(num == 1){
+                sessionStorage.NOME_PERSONAGEM = "Arthur Shelby" 
+            }
+            else if(num == 2){
+                sessionStorage.NOME_PERSONAGEM = "Thomas Shelby" 
+            }
+           else if(num == 3){
+                sessionStorage.NOME_PERSONAGEM = "John Shelby" 
+            }
+           else if(num == 4){
+                sessionStorage.NOME_PERSONAGEM = "Finn Shelby" 
+            }
+           else if(num == 5){
+                sessionStorage.NOME_PERSONAGEM = "Polly Shelby" 
+            }
+           else if(num == 6){
+                sessionStorage.NOME_PERSONAGEM = "Ada Shelby" 
+            }
+           else if(num == 7){
+                sessionStorage.NOME_PERSONAGEM = "Alfie Solomons" 
+            }
+           else if(num == 8){
+                sessionStorage.NOME_PERSONAGEM = "Michael Shelby" 
+            }
+            else if(num == 9){
+                sessionStorage.NOME_PERSONAGEM = "Lizzie Shelby" 
+            }
+            window.location.reload();
+
+
+            
+
+        } else {
+            throw("Houve um erro ao trocar voto perso!");
+        }
+
+    }).catch(function (erro) {
+        console.log(erro);
+    })
+
+}
+
+   

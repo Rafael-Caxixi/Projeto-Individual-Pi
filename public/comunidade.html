@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="comunidade_style.css">
-    <link rel="stylesheet" href="comunidade.js">
+    <script rel="stylesheet" href="comunidade.js"></script>
+
 </head>
 <body>
 
@@ -25,7 +26,7 @@
             <a href="secao_sobre.html">Home</a>
             <a href="classificacao.html">Classificação</a>
             <a href="#">Comunidade</a>
-            <a href="#" onclick="sair_cadastro()">Sair</a>
+            <span onclick="sair_cadastro()">Sair</span>
         </div>
     </div>
 
@@ -47,6 +48,8 @@
         </div>
         <input id="input_descricao" type="text">
 
+        <button id="botao_enviar">Enviar</button>
+
         <div class="titulo_mural">
             Seus comentários 
         </div>
@@ -55,3 +58,11 @@
     </div> <!-- Container -->
 </body>
 </html>
+
+<script>
+    function sair_cadastro() {
+    sessionStorage.clear()
+    alert("Volte sempre")
+    window.location = "index.html"
+}
+</script>

@@ -2,48 +2,76 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="classificacao_style.css">
-    <link rel="stylesheet" href="classificacao.js">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="classificacao_style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script rel="stylesheet" href="classificacao.js"></script>
+  <script rel="stylesheet" href="secao_sobre.js"></script>
+  
 </head>
 
 <body>
 
-    <div class="imagem_fundo">
-        <img src="img/imagem_fundo_home.jpg" id="id_imagem_fundo" draggable="false">
+  <div class="imagem_fundo">
+    <img src="img/imagem_fundo_home.jpg" id="id_imagem_fundo" draggable="false">
 
-    </div>
-    <div class="navbar">
-        <div class="div_pb">
-            <a href="#inicio">Peaky Blinders</a>
-        </div>
-
-        <div class="links_navbar">
-            <a href="secao_sobre.html">Home</a>
-            <a href="classificacao.html">Classificação</a>
-            <a href="#">Comunidade</a>
-            <a href="#" onclick="sair_cadastro()">Sair</a>
-        </div>
+  </div>
+  <div class="navbar">
+    <div class="div_pb">
+      <a href="#inicio">Peaky Blinders</a>
     </div>
 
-    <div class="container">
+    <div class="links_navbar">
+      <a href="secao_sobre.html">Home</a>
+      <a href="classificacao.html" onclick="obter_graficos()">Classificação</a>
+      <a href="comunidade.html">Comunidade</a>
+      <span onclick="sair_cadastro()">Sair</span>
+    </div>
+  </div>
 
-        <div class="titulo_lideranca">
-            <div class="txt_lideranca">
-               Top 5 escolhidos
-            </div>
+  <div class="container">
+
+    <div class="titulo_lider">
+      <div class="txt_lider">
+        Lider da votação
+      </div>
+    </div>
+
+    <div class="caixa_lider">
+      <div class="div_imagem_lider">
+        <img id="imagem_lider" src="">
+      </div>
+      <div class="div_txt_lider">
+        <div class="primeira_caixa">
+          Nome : <b><span id="span_nome_lider">Undefined</span></b>
         </div>
+        <div class="segunda_caixa">
+          Quantidade de votos
+          <b><span id="span_qtd_votos"></span></b>
+        </div>
+      </div>
+    </div>
 
-        <div>
-            <canvas id="myChart_lider" style="position:relative; height: 400px; width: 400px;"></canvas>
-          </div>
-           
+    <div class="titulo_lideranca">
+      <div class="txt_lideranca">
+        Top 5 escolhidos
+      </div>
+    </div>
 
-    </div> <!-- Container -->
+    <div>
+      <canvas id="myChart_lider" style="position:relative; height: 400px; width: 400px; margin-top: 8%;"></canvas>
+    </div>
+
+    <div class="div_footer">
+      Feito por Rafael Caxixi © 2022
+
+    </div>
+
+
+  </div> <!-- Container -->
 
 
 
@@ -53,42 +81,164 @@
 
 </html>
 
-    <script>
+<script>
 
+function sair_cadastro() {
+    sessionStorage.clear()
+    alert("Volte sempre")
+    window.location = "index.html"
+}
+  
+
+  var nome_1 = ""
+  var qtd_1 = 0
+  var nome_2 = ""
+  var qtd_2 = 0
+  var nome_3 = ""
+  var qtd_3 = 0
+  var nome_4 = ""
+  var qtd_4 = 0
+  var nome_5 = ""
+  var qtd_5 = 0
+
+
+  function escolher_lideres() {
+    //aguardar();
+    fetch("/usuarios/escolher_lideres").then(function (resposta) {
+      if (resposta.ok) {
+
+
+        resposta.json().then(function (resposta) {
+          console.log("Dados recebidos: ", JSON.stringify(resposta));
+
+          resposta[0].nome_personagem;
+
+          span_nome_lider.innerHTML = resposta[0].nome_personagem
+          span_qtd_votos.innerHTML = resposta[0].quantidade_votos
+
+          if (resposta[0].nome_personagem == "Arthur Shelby") {
+            imagem_lider.src = `img/arthur_carrossel.webp`
+          }
+          else if (resposta[0].nome_personagem == "Thomas Shelby") {
+            imagem_lider.src = `img/thommy_carrossel.webp`
+          }
+          else if (resposta[0].nome_personagem == "John Shelby") {
+            imagem_lider.src = `img/John_carrossel.webp`
+          }
+          else if (resposta[0].nome_personagem == "Finn Shelby") {
+            imagem_lider.src = `img/finn_carrossel.webp`
+          }
+          else if (resposta[0].nome_personagem == "Polly Shelby") {
+            imagem_lider.src = `img/polly_carrossel.webp`
+          }
+          else if (resposta[0].nome_personagem == "Ada Shelby") {
+            imagem_lider.src = `img/ada_carrossel.webp`
+          }
+          else if (resposta[0].nome_personagem == "Alfie Solomons") {
+            imagem_lider.src = `img/alfie_carrossel.webp`
+          }
+          else if (resposta[0].nome_personagem == "Michael Shelby") {
+            imagem_lider.src = `img/michael_carrossel.webp`
+          }
+          else if (resposta[0].nome_personagem == "Lizzie Shelby") {
+            imagem_lider.src = `img/lizzie_carrossel.webp`
+          }
+
+          nome_1 = resposta[0].nome_personagem
+          qtd_1 = resposta[0].quantidade_votos
+          
+          if(resposta[1]) {
+            nome_2 = resposta[1].nome_personagem
+            qtd_2 = resposta[1].quantidade_votos
+          }
+          if(resposta[2]) {
+            nome_3 = resposta[2].nome_personagem
+            qtd_3 = resposta[2].quantidade_votos
+          }
+          if(resposta[3]) {
+            nome_4 = resposta[3].nome_personagem
+            qtd_4 = resposta[3].quantidade_votos
+          }
+          if(resposta[4]) {
+            nome_5 = resposta[4].nome_personagem
+            qtd_5 = resposta[4].quantidade_votos
+          }
+
+          graficos1()
+
+        });
+      } else {
+        throw ('Houve um erro na API!');
+      }
+    }).catch(function (resposta) {
+      console.error(resposta);
+
+    });
+  }
+
+  escolher_lideres()
+
+
+
+
+  function graficos1(){
+
+  
 
   const data = {
-  labels: [
-    'Thommy',
-    'Arthur',
-    'John',
-    'Finn',
-    'Polly'
-  ],
-  datasets: [{
-    label: 'My First Dataset',
-    data: [10, 30, 5, 25, 30],
-    backgroundColor: [
-      'rgb(255, 99, 132)',
-      'rgb(54, 162, 235)',
-      'green',
-      'yellow',
-      'red'
+    labels: [
+
     ],
-    hoverOffset: 4
-  }]
-};
+    datasets: [{
+      label: 'My First Dataset',
+      data: [],
+      backgroundColor: [
+        'rgb(255, 99, 132)',
+        'rgb(54, 162, 235)',
+        'green',
+        'yellow',
+        'red',
+      ],
+      borderColor: 'transparent',
+      hoverOffset: 4
+    }]
+  };
+
+  Chart.defaults.color = "#FFF"
+  
+
+  data.labels.push(nome_1)
+  data.datasets[0].data.push(qtd_1)
+
+  if (qtd_2 > 0) {
+    data.labels.push(nome_2)
+    data.datasets[0].data.push(qtd_2)
+  }
+  if (qtd_3 > 0) {
+    data.labels.push(nome_3)
+    data.datasets[0].data.push(qtd_3)
+  }
+  if (qtd_4 > 0) {
+    data.labels.push(nome_4)
+    data.datasets[0].data.push(qtd_4)
+  }
+  if (qtd_5 > 0) {
+    data.labels.push(nome_5)
+    data.datasets[0].data.push(qtd_5)
+  }
+
 
   const config = {
     type: 'pie',
     data: data,
     options: {}
   };
-</script>
 
-<script>
-    const myChart = new Chart(
-      document.getElementById('myChart_lider'),
-      config
-    );
-  </script>
-   
+
+
+  const myChart = new Chart(
+    document.getElementById('myChart_lider'),
+    config
+  );
+   }
+</script>

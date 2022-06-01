@@ -1,3 +1,5 @@
+@import url('http://fonts.cdnfonts.com/css/alycidon');
+/* font-family: 'Alycidon', sans-serif; */  /* Fonte do peaky blinders */
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,100&display=swap');
 /* font-family: 'Roboto', sans-serif; */
@@ -34,7 +36,9 @@ body {
     height: 100vh;
     width: 100vw;  
     z-index: -1;
-    margin-top: -6.3%;
+    margin-top: -6%;
+    
+ 
   }
 
  
@@ -46,7 +50,7 @@ body {
     position: fixed;
     margin-left: 15.2%;
     text-shadow:rgb(228, 202, 226) ;
-    margin-top: -6.3%;
+    margin-top: -6%;
   }
 
   .div_pb {
@@ -68,6 +72,7 @@ body {
     transition: 0.5s;
     text-shadow: #ffffff86 2px 3px 4px;
     font-family: 'Alycidon', sans-serif; 
+    font-weight:100;
   }
 
   .links_navbar {
@@ -76,8 +81,23 @@ body {
    display: flex;
    justify-content: center;
    color: white;
-   
+  }
 
+  .links_navbar span {
+    margin: 5%;
+    font-size: 25px;
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.884);
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .links_navbar span:hover {
+    text-decoration: underline;
+  }
+
+  .div_txt_lider span {
+    color:  #ffc500;
   }
   
   .links_navbar a {
@@ -94,28 +114,115 @@ body {
 
   .container {
     background-color: #161720e8;
-    height: 97.9vh;
+    height: 139.9vh;
     width: 70%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 13vh;
+    margin-top: 12.4vh;
     margin-left: 15vw;
+  }
+
+  .titulo_lider {
+    height: 8%;
+    width: 100%;
+  }
+
+  .txt_lider {
+    background-color: #555;
+    height: 60%;
+    width: 22%;
+    color:#FFF;
+    font-size: 25px;
+    font-weight: bold;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 5%;
+    margin-top: 1.9%;
+  }
+
+  .caixa_lider {
+    background-color: rgb(51, 50, 50);
+    height: 17%;
+    width: 40%;
+    border-color: rgb(20, 19, 19);
+    border-style: solid;
+    border-radius: 10px;
+    border-width: 2px;
+  }
+
+  .div_imagem_lider {
+    height: 100%;
+    width: 30%;
+    float: left;
+  }
+
+  .div_imagem_lider img {
+    height: 100%;
+    width: 100%;
+  }
+
+  .div_txt_lider {
+    height: 100%;
+    width: 70%;
+    float: left;
+  }
+
+  .primeira_caixa {
+    height: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    color: #FFF;
+  }
+
+  .segunda_caixa {
+    height: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    color: #FFF;
+    text-align: center;
+    flex-direction: column;
   }
 
   .titulo_lideranca {
     height: 9%;
     width: 100%;
-    margin-top: 2%;
   }
 
   .txt_lideranca {
-    background-color: rgb(40, 40, 51);
+    background-color:  #555;
     height: 40px;
-    width: 300px;
-    border-radius: 13px;
+    width: 200px;
+    border-radius: 10px;
     font-size: 25px;
-    margin-left: 10%;
+    margin-left: 5%;
+    color: #FFF;
+    font-weight: bold;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-top: 4%;
+  } 
+
+  
+
+  .div_footer {
+    background-color: black;
     color: white;
     font-weight: bold;
+    height: 7%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    margin-top: 12%;
   }

@@ -1,3 +1,6 @@
+@import url('http://fonts.cdnfonts.com/css/alycidon');
+/* font-family: 'Alycidon', sans-serif; */  /* Fonte do peaky blinders */
+
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,100&display=swap');
 /* font-family: 'Roboto', sans-serif; */
 
@@ -26,7 +29,7 @@ body {
     margin: 0;
     padding: 0;  
     font-family: 'Roboto', sans-serif;
-    font-weight: bold;
+    
 }
 
 
@@ -56,7 +59,7 @@ body {
     height: 100%;
     font-size: 60px;    
     float: left;
-    transition: all 1s;
+    transition: 1s;
     align-items: center;
     display: flex;
     font-family: 'Alycidon', sans-serif; 
@@ -78,8 +81,19 @@ body {
    display: flex;
    justify-content: center;
    color: white;
-   
+  }
 
+  .links_navbar span {
+    margin: 5%;
+    font-size: 25px;
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.884);
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .links_navbar span:hover {
+    text-decoration: underline;
   }
   
   .links_navbar a {
@@ -165,4 +179,18 @@ body {
    color: white;
    font-size: 28px;
    margin-top: 2%;
+ }
+
+ #botao_enviar {
+   width: 80px;
+   height: 35px;
+   background-color: black;
+   color: white;
+   border-radius: 10px;
+   font-family: 'Roboto', sans-serif;
+   font-weight: bold;
+   font-size: 20px;
+   cursor: pointer;
+   margin-top: 10px;
+   margin-left: -78%;
  }
