@@ -1,68 +1,313 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+    <link rel="shortcut icon" href="../assets/icon/favicon.ico" type="image/x-icon">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>AcquaTec | Avisos</title>
     <link rel="stylesheet" href="comunidade_style.css">
-    <script rel="stylesheet" href="comunidade.js"></script>
 
+
+    <!--  <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="./dashboards.css"> -->
+    <script src="comunidade.js"></script>
+    <script src="main.js"></script>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
 </head>
-<body>
 
-    
+<body onload="atualizarFeed()" style="background-color: #161618;">
+    <!-- <body onload="validarSessao()"> -->
+
+
     <div class="imagem_fundo">
-        <img src="img/imagem_fundo_home.jpg" id="id_imagem_fundo" draggable="false">
+        <img src="img/imagem_fundo_home.jpg" id="imagem_fundo_a">
 
-        
-    </div>
-    <div class="navbar">
-        <div class="div_pb">
-            <a href="#inicio">Peaky Blinders</a>
-        </div>
+        <div class="navbar">
+            <div class="div_pb">
+                <a href="#inicio">Peaky Blinders</a>
+            </div>
 
-        <div class="links_navbar">
-            <a href="secao_sobre.html">Home</a>
-            <a href="classificacao.html">Classificação</a>
-            <a href="#">Comunidade</a>
-            <span onclick="sair_cadastro()">Sair</span>
-        </div>
-    </div>
-
-    <div class="container">
-
-        <div class="div_titulo">
-            <div class="txt_titulo">
-                Faça seu comentário 
+            <div class="links_navbar">
+                <a href="secao_sobre.html">Home</a>
+                <a href="classificacao.html" onclick="obter_graficos()">Classificação</a>
+                <a href="comunidade.html">Comunidade</a>
+                <span onclick="sair_cadastro()">Sair</span>
             </div>
         </div>
 
-        <div class="div_nome_titulo">
-            Titulo:
-        </div>
-        <input id="input_titulo" type="text">
+     
 
-        <div class="div_nome_titulo">
-            Descricao:
-        </div>
-        <input id="input_descricao" type="text">
+            <!--  <div class="janela"> -->
 
-        <button id="botao_enviar">Enviar</button>
+            <!-- 
+            <div class="header-left">
 
-        <div class="titulo_mural">
-            Seus comentários 
-        </div>
+                <h1>AcquaTec</h1>
 
-       
-    </div> <!-- Container -->
+                <div class="hello">
+                    <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
+                </div>
+
+                <div class="btn-nav-white">
+                    <a href="cards.html">
+                        <h3>Aquários</h3>
+                    </a>
+                </div>
+
+                <div class="btn-nav-white">
+                    <a href="./dashboard.html">
+                        <h3>Gráficos</h3>
+                    </a>
+                </div>
+                
+                <div class="btn-nav">
+                    <h3>Mural de Avisos</h3>
+                </div>
+
+                <div class="btn-logout" onclick="limparSessao()">
+                    <h3>Sair</h3>
+                </div>
+
+            </div> -->
+
+            <div class="dash-right">
+
+                <div class="avisos">
+                    <div class="container">
+                        <h1>Faça um comentário</h1>
+                        <div class="div-form">
+                            <form id="form_postagem">
+                                <label>
+                                    Descrição (máximo de 250 caracteres):
+                                    <br>
+                                    <textarea name="descricao" id="comentario_usuario" maxlength="250"
+                                        rows="5"></textarea>
+                                </label>
+                                <br>
+                                <button type="button" onclick="publicar()">Enviar</button>
+                            </form>
+                        </div>
+                        <h1>Mural de Avisos</h1>
+                        <div class="div-results">
+                            <div id="feed_container" class="feed-container">
+                            </div>
+                        </div>
+                        <div id="div_aguardar" class="div-aguardar">
+                            <!--    <img src="./assets/aguarde-pink3.gif" id="img_aguarde"> -->
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+                        <!-- MODAL -->
+                    <!-- <div id="div_modal" class="div-modal">
+                      <div id="modal_backdrop" onclick="fecharModal()" class="modal-backdrop">
+                    </div>
+                   <div id="modal_container" class="modal-container">
+                            <button class="btn-fechar-modal" onclick="fecharModal()">X</button>
+                   </div>
+                   </div> -->
+
+                    <!-- AGUARDAR -->
+                  <!-- <div id="div_aguardar" class="div-aguardar">
+                    <img src="./assets/aguarde-pink3.gif" id="img_aguarde">
+                    </div>  -->
+
+            </div>
+            <!--     </div> Janela -->
+
+    </div>
+    </div>
+
+
 </body>
+
 </html>
 
 <script>
+
+    b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+
+    function finalizarAguardar(texto) {
+        var divAguardar = document.getElementById("div_aguardar");
+        divAguardar.style.display = "none";
+
+        var divErrosLogin = document.getElementById("div_erros_login");
+        if (texto) {
+            divErrosLogin.innerHTML = texto;
+        }
+    }
+
+
+    function limparFormulario() {
+        document.getElementById("form_postagem").reset();
+    }
+
+    function publicar() {
+        var idUsuario = sessionStorage.ID_USUARIO;
+
+        var corpo = {
+            comentario_usuario: comentario_usuario.value
+        }
+
+        fetch(`/avisos/publicar/${idUsuario}`, {
+            method: "post",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(corpo)
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                window.alert("Post realizado com sucesso pelo usuario de ID: " + idUsuario + "!");
+                finalizarAguardar();
+                window.location.reload()
+            } else if (resposta.status == 404) {
+                window.alert("Deu 404!");
+            } else {
+                throw ("Houve um erro ao tentar realizar a postagem! Código da resposta: " + resposta.status);
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+            finalizarAguardar();
+        });
+
+        return false;
+
+    }
+
+    function editar(idAviso) {
+        sessionStorage.ID_POSTAGEM_EDITANDO = idAviso;
+        console.log("cliquei em editar - " + idAviso);
+        window.alert("Você será redirecionado à página de edição do aviso de id número: " + idAviso);
+        window.location = "/dashboard/edicao-aviso.html"
+
+    }
+
+    function deletar(idAviso) {
+        console.log("Criar função de apagar post escolhido - ID" + idAviso);
+        fetch(`/avisos/deletar/${idAviso}`, {
+            method: "DELETE",
+            headers: {
+                "Content-Type": "application/json"
+            }
+        }).then(function (resposta) {
+
+            if (resposta.ok) {
+                window.alert("Post deletado com sucesso pelo usuario de email: " + sessionStorage.getItem("EMAIL_USUARIO") + "!");
+                window.location = "/dashboard/mural.html"
+            } else if (resposta.status == 404) {
+                window.alert("Deu 404!");
+            } else {
+                throw ("Houve um erro ao tentar realizar a postagem! Código da resposta: " + resposta.status);
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+        });
+    }
+
+    function atualizarFeed() {
+        //aguardar();
+        fetch("/avisos/listar").then(function (resposta) {
+            if (resposta.ok) {
+                if (resposta.status == 204) {
+                    var feed = document.getElementById("feed_container");
+                    var mensagem = document.createElement("span");
+                    mensagem.innerHTML = "Nenhum resultado encontrado."
+                    feed.appendChild(mensagem);
+                    throw "Nenhum resultado encontrado!!";
+                }
+
+                resposta.json().then(function (resposta) {
+                    console.log("Dados recebidos: ", JSON.stringify(resposta));
+
+                    var feed = document.getElementById("feed_container");
+                    feed.innerHTML = "";
+                    for (let i = 0; i < resposta.length; i++) {
+                        var publicacao = resposta[i];
+
+                        // criando e manipulando elementos do HTML via JavaScript
+                        var divPublicacao = document.createElement("div");
+                        var spanNome = document.createElement("span");
+                        var divDescricao = document.createElement("div");
+                        var divButtons = document.createElement("div");
+                        var btnDeletar = document.createElement("button");
+
+
+                        spanNome.innerHTML = "<b>" + publicacao.nome_usuario + "</b>";
+                        divDescricao.innerHTML = "Descrição: <b>" + publicacao.comentario_usuario + "</b>";
+                        btnDeletar.innerHTML = "Deletar";
+
+                        divPublicacao.className = "publicacao";
+                        spanNome.className = "publicacao-nome";
+                        divDescricao.className = "publicacao-descricao";
+
+                        divButtons.className = "div-buttons"
+
+                        btnDeletar.className = "publicacao-btn-editar"
+                        btnDeletar.id = "btnDeletar" + publicacao.idAviso;
+                        btnDeletar.setAttribute("onclick", `deletar(${publicacao.idAviso})`);
+
+                        divPublicacao.appendChild(spanNome);
+                        divPublicacao.appendChild(divDescricao);
+                        divPublicacao.appendChild(divButtons);
+                        divButtons.appendChild(btnDeletar);
+                        feed.appendChild(divPublicacao);
+                    }
+
+                    finalizarAguardar();
+                });
+            } else {
+                throw ('Houve um erro na API!');
+            }
+        }).catch(function (resposta) {
+            console.error(resposta);
+            finalizarAguardar();
+        });
+    }
+
+    function testar() {
+        aguardar();
+
+        var formulario = new URLSearchParams(new FormData(document.getElementById("form_postagem")));
+
+        var divResultado = document.getElementById("div_feed");
+
+        divResultado.appendChild(document.createTextNode(formulario.get("descricao")));
+        divResultado.innerHTML = formulario.get("descricao");
+
+        finalizarAguardar();
+
+        return false;
+    }
+
+</script>
+
+
+
+<script>
     function sair_cadastro() {
-    sessionStorage.clear()
-    alert("Volte sempre")
-    window.location = "index.html"
-}
+        sessionStorage.clear()
+        alert("Volte sempre")
+        window.location = "index.html"
+    }
+
+    function criar_comentario() {
+        var comentário = input_titulo.value
+
+        comentário.document.createElement("criar_div")
+        criar_div.style.display = "block"
+    }
+
+
 </script>

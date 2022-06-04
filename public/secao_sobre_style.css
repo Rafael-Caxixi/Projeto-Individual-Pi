@@ -44,14 +44,14 @@ body {
 
 
 .navbar {
-    background: rgb(132,71,140);
-    background: linear-gradient(90deg, rgba(132,71,140,1) 0%, rgba(2,0,36,1) 100%);
-    height: 13vh;
-    width:70%;
-    position: fixed;
-    margin-left: 15.2%;
-    margin-top: -13vh;
-    text-shadow:rgb(228, 202, 226) ;
+  background: rgb(132,71,140);
+  background: linear-gradient(90deg, rgba(132,71,140,1) 0%, rgba(2,0,36,1) 100%);
+  height: 13.5vh;
+  width:70%;
+  position: fixed;
+  margin-left: 15.15%;
+  text-shadow:rgb(228, 202, 226) ;
+  margin-top: -13vh;
   }
 
   .div_pb {
@@ -98,6 +98,7 @@ body {
 
   .links_navbar a {
     margin: 5%;
+    margin-top: 4.5%;
     font-size: 25px;
     text-decoration: none;
     color: rgba(255, 255, 255, 0.884);
@@ -110,13 +111,13 @@ body {
   
   .container {
       background-color: #161720e8;
-      height: 197.9vh;
-      width: 70%;
+      height: 167.9vh;
+      width: 69.95%;
       display: flex;
       flex-direction: column;
       align-items: center;
       margin-top: 13vh;
-      margin-left: 15vw;
+      margin-left: 14.98vw;
   }
 
   .div_info_usuario {
@@ -126,14 +127,14 @@ body {
 
   .div_nome {
     width: 100%;
-    height: 50%;
+    height: 40%;
     display: flex;
     justify-content: center;
     align-items:flex-end;
     font-size: 25px;
     font-weight: bold;
     color: white;
-    margin-top: 1%;
+    
   }
 
   .div_nome b {
@@ -160,12 +161,11 @@ body {
     width: 100%;
     display: flex;
     align-items: center;
-    margin-top: 3%;
   }
 
   .frase_escolha {
     background-color: rgb(40, 40, 51);
-    height: 5vh;
+    height: 6vh;
     width: 38%;
     border-radius: 13px;
    
@@ -340,7 +340,7 @@ body {
     border-radius: 10px;
   }
 
-  .primeira_caixa, .segunda_caixa {
+  .primeira_caixa, .segunda_caixa, .terceira_caixa, .quarta_caixa, .quinta_caixa, .sexta_caixa, .setima_caixa, .oitava_caixa, .nona_caixa, .decima_caixa {
     height: 80%;
     width: 80%;
     
@@ -388,23 +388,43 @@ body {
     margin-left: 5%;
   }
 
+  .resultado_caixa {
+  color: white;
+  height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 35px;
 
-  
+  } 
 
- /* .div_footer {
-   background-color: black;
-   color: white;
-   font-weight: bold;
-   height: 10vh;
-   width: 100%;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   margin-top: 17vh ;
-   font-size: 20px;
+ #span_resposta {
+   margin-left: 15%;
+   
  }
- */
+
   
+
+  .div_img {
+    height: 70%;
+    width: 70%;
+    margin-left: 15%;
+    margin-top: 5%;
+    
+  }
+  
+  #id_img_vencedor {
+    height: 80%;
+    width: 100%;
+    border-radius: 10px;
+
+  }
+
+
+  
+
+
   
   
   

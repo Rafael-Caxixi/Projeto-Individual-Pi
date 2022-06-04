@@ -125,6 +125,7 @@ body {
     font-size: 20px;
     border-radius: 15px;
     margin-top:1%;
+    font-weight: bold;
     
     
     }
@@ -137,9 +138,11 @@ body {
         border-color: black;
         font-weight: bold;
         font-size: 22px;
+        cursor: pointer;
     }
 
     /* HTML LOGIN */
+
 
     .caixa_branca_login {
         opacity: 0;
@@ -216,6 +219,7 @@ body {
         font-size: 20px;
         border-radius: 15px;
         margin-top: 2%;
+        cursor: pointer;
     }
 
     #botao_login:hover {
@@ -226,6 +230,54 @@ body {
         border-color: black;
         font-weight: bold;
         font-size: 22px;
+    }
+
+     #botao_perdido, #botao_voltar {
+         cursor: pointer;
+         background-color:rgb(175, 174, 174);
+         color: rgb(0, 0, 0);
+        height: 45px;
+        width: 140px;
+        margin-top: 1%;
+        margin-left: 5%;
+        border-radius: 12px;
+        font-size: 23px;
+        font-family:'Roboto', sans-serif ;
+        border-color: transparent;
+        font-weight: bold;
+    } 
+    #botao_perdido:hover {
+        background-color: black;
+        color: white;
+        font-weight: bold;
+        transition: 0.5s;
+        width: 148px;
+        height: 50px;
+    } 
+
+    .div_sobre {
+        height: 100%;
+        width: 100%;
+        background-color: rgba(211, 214, 210, 0.74);
+        transition: 0.5s;
+    }
+
+    .titulo_sobre {
+        height: 20%;
+        width: 100%;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 40px;
+        font-weight: bold;
+    }
+
+    .txt_sobre {
+        font-size: 20px;
+        font-weight: bold;
+        height: 80%;
+        width: 70%;
+        margin-left: 17%;
     }
 
  

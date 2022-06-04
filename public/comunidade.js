@@ -11,6 +11,7 @@ function sair_cadastro() {
 
     function publicar() {
         var idUsuario = sessionStorage.ID_USUARIO;
+        var comentario_usuario = sessionStorage.COMENTARIO_USUARIO;
 
         var corpo = {
             titulo: form_postagem.titulo.value,

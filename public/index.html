@@ -19,7 +19,7 @@
 
 
             <div class="caixa_branca" id="caixa_branca_cadastro" style="display:block ;">
-                <div id="div_trocar">
+                <div id="div_trocar" style="display:block ;">
                     <div class="faca_parte">Faça parte da nossa comunidade</div> <br><br>
 
                     <div class="primeira_caixa">
@@ -90,13 +90,34 @@
                     <div class="div_botao_login">
                         <button id="botao_login" onclick="entrar()">Log-in</button>
                     </div>
+                </div><!-- Fim html login -->
 
+                <div class="div_sobre" id="caixa_sobre" style="display: none;">
+                    <div>
+                        <div class="titulo_sobre">
+                            O que é Peaky Blinders ?
+                        </div>
+                        <div class="txt_sobre">
+
+                            Peaky Blinders é uma série de TV britânica transmitida originalmente pela BBC Two. A
+                            história se
+                            passa na Grã-Bretanha em 1919 e acompanha a família Shelby, uma gangue cruel que prosperou
+                            após
+                            a Primeira Guerra Mundial, quando atividades do submundo, como o comércio ilegal de armas,
+                            esquema ilegal de aposta em corrida de cavalos, proteção e golpes de jogo se tornaram
+                            frequentes.
+
+                            A série é inspirada pelos eventos e pela história dos Peaky Blinders, uma gangue que surgiu
+                            na
+                            cidade de Birmingham, na Inglaterra.
+                        </div>
+                    </div>
                 </div>
 
-
-
-
             </div>
+            <button id="botao_perdido" style="display: block;position: fixed;" onclick="funcao_perdido()">Ta perdido
+                ?</button>
+          <!--   <button id="botao_voltar" style="position:fixed;display: none;" onclick="funcao_voltar()">Voltar</button> -->
         </div>
 
     </div>
@@ -108,3 +129,89 @@
 
 </html>
 
+<script>
+
+    function funcao_perdido() {
+        if (div_trocar.style.display == 'block') {
+            div_trocar.style.transition = 'opacity 0.5s ease'
+            div_trocar.style.display = 'none'
+            trocar_p_login.style.display = 'none'
+            caixa_sobre.style.display = 'block'
+            botao_perdido.innerHTML = "Voltar"
+        }
+        else if (caixa_sobre.style.display == 'block') {
+            caixa_sobre.style.display = 'none'
+            div_trocar.style.display = 'block'
+            botao_perdido.innerHTML = "Ta perdido ?"
+        }
+        
+      /*    else if (trocar_p_login.style.display == 'block') {
+            trocar_p_login.style.display = 'none'
+            caixa_sobre.style.display = 'block'
+            caixa_branca_cadastro.style.width = '47%'
+            caixa_branca_cadastro.style.height = '55%'
+            caixa_branca_cadastro.style.marginLeft = '26%'
+            botao_perdido.innerHTML = "Voltar"
+        } */
+        
+    }
+
+    /*   function funcao_perdido() {
+       
+      div_trocar.style.transition = 'opacity 0.5s ease'
+      div_trocar.style.opacity = 0
+      caixa_sobre.style.display = 'block'
+      
+      setTimeout(function() {
+          div_trocar.style.display = 'none'
+          trocar_p_login.style.display = 'none'
+          trocar_p_login.style.opacity = 0
+  
+          caixa_branca_cadastro.style.width = '47%'
+          caixa_branca_cadastro.style.height = '55%'
+          caixa_branca_cadastro.style.marginLeft = '26%'
+          
+      },200)
+      
+      setTimeout(function() {
+          trocar_p_login.style.transition = 'opacity 1s ease'
+          trocar_p_login.style.opacity = 0
+          
+      },350)
+  
+      setTimeout(function() {
+          botao_perdido.style.transition = 'opacity 1s ease'
+          botao_perdido.style.opacity = 0
+          botao_voltar.style.transition = 'opacity 1s ease'
+          botao_voltar.style.opacity = 1
+          botao_voltar.style.display = 'block'
+          
+      },350)
+      } */
+
+    /*    function funcao_voltar() {
+   
+           
+           botao_perdido.style.transition = 'opacity 0.5s ease'
+           botao_perdido.style.opacity = 1
+           botao_voltar.style.transition = 'opacity 0.5s ease'
+           botao_voltar.style.opacity = 0
+           botao_perdido.style.display = 'block'    
+           
+           setTimeout(function() {
+               div_trocar.style.display = 'block'
+               trocar_p_login.style.display = 'none'
+               trocar_p_login.style.opacity = 0
+               div_trocar.style.opacity = 1
+               caixa_sobre.style.opacity = 0
+               caixa_sobre.style.display = 'none'
+   
+           caixa_branca_cadastro.style.width = '49%'
+           caixa_branca_cadastro.style.height = '58%'
+           caixa_branca_cadastro.style.marginLeft = '25%'
+           
+       },200)
+       
+   
+       } */
+</script>

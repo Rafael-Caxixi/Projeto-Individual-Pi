@@ -32,6 +32,7 @@ function mostrar_confirmar_senha() {
  } 
 
 function funcao_clique_aqui() {
+    botao_perdido.style.display = 'none'
     div_trocar.style.transition = 'opacity 0.5s ease'
     div_trocar.style.opacity = 0
     trocar_p_login.style.display = 'block'
@@ -55,6 +56,8 @@ function funcao_clique_aqui() {
 
 
  function imagem_voltar_cadastro() {
+
+    botao_perdido.style.display = 'block'
 
     div_trocar.style.transition = 'opacity 0.5s ease'
     div_trocar.style.opacity = 1
@@ -179,7 +182,6 @@ function validar_confirmar_senha() {
         alert("Senhas diferentes ou incorretas")
     }
     else {
-        alert("Seja Bem-vindo")
         fetch("/usuarios/cadastrar", {
             method: "POST",
             headers: {
@@ -194,28 +196,26 @@ function validar_confirmar_senha() {
                 cepServer: var_cep,
                 senhaServer: var_senha
                 
-               
-
+                
+                
+                
             })
         }).then(function (resposta) {
-    
+            
             console.log("resposta: ", resposta);
-    
+            
             if (resposta.ok) {
                 alert("Cadastro efetuado com sucesso")
-    
-                
-    
+                alert("Seja Bem-vindo")
               
                     funcao_clique_aqui() 
-             
-                
-                
                 
             } else {
                 throw ("Houve um erro ao tentar realizar o cadastro!");
+              
             }
         }).catch(function (resposta) {
+            window.alert("Esse email ja possui um cadastro")
             console.log(`#ERRO: ${resposta}`);
             
         });
@@ -255,11 +255,13 @@ function validar_confirmar_senha() {
                 resposta.json().then(json => {
                     console.log(json);
                     console.log(JSON.stringify(json));
+
     
                     sessionStorage.EMAIL_USUARIO = json.email_usuario;
                     sessionStorage.NOME_USUARIO = json.nome_usuario;
                     sessionStorage.ID_USUARIO = json.id_usuario;
                     sessionStorage.NOME_PERSONAGEM = json.nome_personagem;
+                    
     
                     setTimeout(function () {
                         window.location = "secao_sobre.html";
@@ -271,6 +273,7 @@ function validar_confirmar_senha() {
     
                 console.log("Houve um erro ao tentar realizar o login!");
                 alert("Erro ao efetuar login")
+                
     
                 resposta.text().then(texto => {
                     console.error(texto);
@@ -306,4 +309,13 @@ function validarSessao() {
         window.location = "../login.html";
     }
 }
- */
+*/
+function finalizarAguardar(texto) {
+    var divAguardar = document.getElementById("div_aguardar");
+    divAguardar.style.display = "none";
+
+    var divErrosLogin = document.getElementById("div_erros_login");
+    if (texto) {
+        divErrosLogin.innerHTML = texto;
+    }
+}

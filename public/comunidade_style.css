@@ -33,25 +33,56 @@ body {
 }
 
 
-#id_imagem_fundo {
-  background-image: url(https://blog.enem.com.br/wp-content/uploads/2020/05/capa-materia-peaky-1024x683.jpg);
-  position: fixed;
-  height: 100vh;
-  width: 100vw;  
-  z-index: -1;
-  margin-top: -13.1vh;
-}
-
 
 .navbar {
     background: rgb(132,71,140);
     background: linear-gradient(90deg, rgba(132,71,140,1) 0%, rgba(2,0,36,1) 100%);
-    height: 13vh;
+    height: 13.5vh;
     width:70%;
     position: fixed;
     margin-left: 15.2%;
-    margin-top: -13vh;
+    margin-top: -13.1vh;
     text-shadow:rgb(228, 202, 226) ;
+  }
+
+  .imagem_fundo {
+    height: 100vh;
+    width: 100%;
+  }
+
+  .dash-right {
+    height: 100%;
+    width: 70%;
+    margin-left: 15.2%;
+  }
+  
+  #comentario_usuario {
+    height:100px ;
+    width:550px;
+    background-color: #555;
+    border-radius: 10px;
+    border-color: black;
+    border-width: 2px;
+    color: white;
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+  }
+
+  .div-form {
+    height: 50%;
+    width: 60%;
+    font-size: 20px;
+    color: white;
+    margin-left: -38%;
+    
+  }
+
+  #imagem_fundo_a {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    z-index: -1;
+    margin-top:-12.95vh;
   }
 
   .div_pb {
@@ -59,7 +90,6 @@ body {
     height: 100%;
     font-size: 60px;    
     float: left;
-    transition: 1s;
     align-items: center;
     display: flex;
     font-family: 'Alycidon', sans-serif; 
@@ -70,7 +100,6 @@ body {
     margin-left: 25%;
     text-decoration: none;
     cursor: pointer;
-    transition: 0.5s;
     text-shadow: #ffffff86 2px 3px 4px;
     font-family: 'Alycidon', sans-serif; 
   }
@@ -110,17 +139,16 @@ body {
   
   .container {
       background-color: #161720e8;
-      height: 97.9vh;
-      width: 70%;
+      height: 107.9vh;
+      width: 100%;
       display: flex;
       flex-direction: column;
       align-items: center;
       margin-top: 13vh;
-      margin-left: 15vw;
-  }
+  } 
 
   .div_titulo {
-    height: 15%;
+    height: 9%;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -129,24 +157,18 @@ body {
 
   .txt_titulo {
     background-color: #555;
-    height: 40%;
+    height: 50%;
     width: 40%;
     font-size: 30px;
     border-radius: 10px;
     color: white;
     justify-content: center;
     display: flex;
+    align-items: center;
     font-weight: bold;
   }
 
-  .div_nome_titulo {
-    height: 6%;
-    width: 95%;
-    margin-left: 5%;
-    font-size: 25px;
-    color: white;
-    padding: 20px;
-  }
+ 
  
   #input_titulo {
     width: 400px;
@@ -156,8 +178,10 @@ body {
     border-radius: 10px;
     background-color: #555;
     color: white;
-    margin-top: -20px;
+    margin-top: 10px;
+    font-size: 20px;
   }
+
 
  #input_descricao {
   width: 400px;
@@ -193,4 +217,19 @@ body {
    cursor: pointer;
    margin-top: 10px;
    margin-left: -78%;
+ }
+
+ #criar_div {
+   background-color: red;
+   height: 200px;
+   width: 600px;
+   border: 2px solid rgba(255, 255, 255, 0.658);
+   border-radius: 10px;
+ }
+
+ #criar_titulo {
+   background-color: blue;
+   height: 30%;
+   width: 90%;
+   margin-left: 10%; 
  }

@@ -34,8 +34,8 @@ function nextImage() {
             count++
         }
     }
-    document.getElementById("radio" + count).checked = true
-    check = document.getElementById("radio" + count).checked
+   document.getElementById("radio" + count).checked = true  
+    check = document.getElementById("radio" + count).checked  
     if (count == 3) {
         document.getElementById("label" + count).style.backgroundColor = "white"
         document.getElementById("label" + 2).style.backgroundColor = "transparent"
@@ -55,7 +55,7 @@ function nextImage() {
 
    
 
-} 
+}   
 /* Fim Funcao carrossel */
 /* 
 function validarSessao() {

@@ -112,54 +112,196 @@
             <!--  HTML QUIZ  -->
 
             <div class="titulo_quiz">
-                Consegue acetar esse quiz ?
+                Consegue acertar esse quiz ?
             </div>
             <div class="caixa_quiz">
                 <div class="primeira_caixa" id="primeiro_quiz" style="display: block;">
-                    <div class="div_pergunta">
-                        Qual o nome do filho do Thomas Shelby?
+                    <div class="div_pergunta" id="id_pergunta">
+                        Qual o nome do primeiro filho do Thomas Shelby ?
                     </div>
                     <div class="div_respostas">
-                        <div class="primeira_resposta" onclick="errou()">
+                        <button class="primeira_resposta" id="id_primeira_resposta" onclick="errar()">
                             <span>Peter</span>
-                        </div>
-                        <div class="segunda_resposta" onclick="acertou()">
+                        </button>
+                        <button class="segunda_resposta" id="id_segunda_resposta"  onclick="acertar()">
                             <span>Charles</span>
-                        </div>
-                        <div class="terceira_resposta" onclick="errou()">
-                            <span >Will</span>
-                        </div>
+                        </button>
+                        <button class="terceira_resposta" id="id_terceira_resposta" onclick="errar()">
+                            <span>Will</span>
+                        </button>
                     </div>
 
                 </div>
-
+                
                  <div class="segunda_caixa" id="segundo_quiz" style="display: none;">
                     <div class="div_pergunta">
                         Qual o irmão mais novo do Arthur Shelby ?
                     </div>
                     <div class="div_respostas">
-                        <div class="primeira_resposta" onclick="errou()">
+                        <button class="primeira_resposta" onclick="errar()">
                             <span>Michael</span>
-                        </div>
-                        <div class="segunda_resposta" onclick="errou()">
+                        </button>
+                        <button class="segunda_resposta" onclick="errar()">
                             <span>John</span>
-                        </div>
-                        <div class="terceira_resposta" onclick="acertou()">
+                        </button>
+                        <button class="terceira_resposta" onclick="acertar()">
                             <span>Finn</span>
-                        </div> 
+                        </button> 
                     </div>
 
-                </div>
+                </div> 
 
+                <div class="terceira_caixa" id="terceiro_quiz" style="display: none;">
+                    <div class="div_pergunta">
+                        Qual o nome da ex esposa do Thomas ?
+                    </div>
+                    <div class="div_respostas">
+                        <button class="primeira_resposta" onclick="errar()">
+                            <span>Lizzie</span>
+                        </button>
+                        <button class="segunda_resposta" onclick="acertar()">
+                            <span>Grace</span>
+                        </button>
+                        <button class="terceira_resposta" onclick="errar()">
+                            <span>Ada</span>
+                        </button> 
+                    </div>
+                </div>  
+
+                <div class="quarta_caixa" id="quarta_quiz" style="display: none;">
+                    <div class="div_pergunta">
+                       O que a Polly é dos irmãos Shelby ?
+                    </div>
+                    <div class="div_respostas">
+                        <button class="primeira_resposta" onclick="acertar()">
+                            <span>Prima</span>
+                        </button>
+                        <button class="segunda_resposta" onclick="acertar()">
+                            <span>Tia</span>
+                        </button>
+                        <button class="terceira_resposta" onclick="errar()">
+                            <span>Amiga</span>
+                        </button> 
+                    </div>
+                </div>  
+
+                <div class="quinta_caixa" id="quinta_quiz" style="display: none;">
+                    <div class="div_pergunta">
+                        Na segunda temporada Jonh Shelby casa-se, com quem ?
+                    </div>
+                    <div class="div_respostas">
+                        <button class="primeira_resposta" onclick="acertar()">
+                            <span>Esme</span>
+                        </button>
+                        <button class="segunda_resposta" onclick="errar()">
+                            <span>Linda</span>
+                        </button>
+                        <button class="terceira_resposta" onclick="errar()">
+                            <span>Tatiana</span>
+                        </button> 
+                    </div>
+                </div>  
+
+                <div class="sexta_caixa" id="sexta_quiz" style="display: none;">
+                    <div class="div_pergunta">
+                        Aonde os peaky blinders moram ?
+                    </div>
+                    <div class="div_respostas">
+                        <button class="primeira_resposta" onclick="errar()">
+                            <span>Nova York</span>
+                        </button>
+                        <button class="segunda_resposta" onclick="errar()">
+                            <span>Paris</span>
+                        </button>
+                        <button class="terceira_resposta" onclick="acertar()">
+                            <span>Birmingham</span>
+                        </button> 
+                    </div>
+                </div>  
+
+                <div class="setima_caixa" id="setima_quiz" style="display: none;">
+                    <div class="div_pergunta">
+                        Quem matou o Changretta ?
+                    </div>
+                    <div class="div_respostas">
+                        <button class="primeira_resposta" onclick="errar()">
+                            <span>Thomas</span>
+                        </button>
+                        <button class="segunda_resposta" onclick="acertar()">
+                            <span>Arthur</span>
+                        </button>
+                        <button class="terceira_resposta" onclick="errar()">
+                            <span>John</span>
+                        </button> 
+                    </div>
+                </div>  
+                <div class="oitava_caixa" id="oitava_quiz" style="display: none;">
+                    <div class="div_pergunta">
+                        Na quarta temporada quem mandou matar John Shelby ?
+                    </div>
+                    <div class="div_respostas">
+                        <button class="primeira_resposta" onclick="errar()">
+                            <span>Billy Kimber</span>
+                        </button>
+                        <button class="segunda_resposta" onclick="errar()">
+                            <span>Michael Gray</span>
+                        </button>
+                        <button class="terceira_resposta" onclick="acertar()">
+                            <span>Luca Changretta</span>
+                        </button> 
+                    </div>
+                </div>  
+                <div class="nona_caixa" id="nona_quiz" style="display: none;">
+                    <div class="div_pergunta">
+                        Qual o nome do pai dos Shelby?
+                    </div>
+                    <div class="div_respostas">
+                        <button class="primeira_resposta" onclick="errar()">
+                            <span>Will</span>
+                        </button>
+                        <button class="segunda_resposta" onclick="errar()">
+                            <span>Tyler</span>
+                        </button>
+                        <button class="terceira_resposta" onclick="acertar()">
+                            <span>Arthur</span>
+                        </button> 
+                    </div>
+                </div>  
+                <div class="decima_caixa" id="decima_quiz" style="display: none;">
+                    <div class="div_pergunta">
+                        Qual o código que o espião deu no dia do casamento de thomas ?
+                    </div>
+                    <div class="div_respostas">
+                        <button class="primeira_resposta" onclick="errar()">
+                            <span>Birmingham</span>
+                        </button>
+                        <button class="segunda_resposta" onclick="acertar()">
+                            <span>Constantine</span>
+                        </button>
+                        <button class="terceira_resposta" onclick="errar()">
+                            <span>Garrison</span>
+                        </button> 
+                    </div>
+                </div>  
+            
+
+                <div class="resultado_caixa" id="resultado_quiz" style="display: none;">
+                    <br>
+                    <span id="span_resposta"></span>
+                   <div class="div_img">
+                       <img id="id_img_vencedor" src="">
+                   </div>
+                </div>  
+
+              
+                </div>  
+
+               
 
             </div> <!-- Caixa quiz -->
 
 
-            <!-- 
-            <div class="div_footer">
-                Feito por Rafael Caxixi © 2022
-
-            </div>  -->
+           
         </div> <!-- Container -->
 
 
@@ -201,63 +343,227 @@
 
 
     /* Teste quiz */
+
+   
+
+
+
+    var lista_respostas = []
+    
+    
+    
+    function acertar() {
+
+        lista_respostas.push(1)
+
+        if(primeiro_quiz.style.display == "block") {
+            primeiro_quiz.style.display = "none"
+            segundo_quiz.style.display = "block"
+        } 
+
+       else if(segundo_quiz.style.display == "block") {
+            segundo_quiz.style.display = "none"
+            terceiro_quiz.style.display = "block"
+        } 
+
+       else if(terceiro_quiz.style.display == "block") {
+            terceiro_quiz.style.display = "none"
+            quarta_quiz.style.display = "block"
+        } 
+
+       else if(quarta_quiz.style.display == "block") {
+            quarta_quiz.style.display = "none"
+            quinta_quiz.style.display = "block"
+        } 
+        
+        else if(quinta_quiz.style.display == "block") {
+            quinta_quiz.style.display = "none"
+            sexta_quiz.style.display = "block"
+        }
+        else if(sexta_quiz.style.display == "block") {
+            sexta_quiz.style.display = "none"
+            setima_quiz.style.display = "block"
+        }
+        else if(setima_quiz.style.display == "block") {
+            setima_quiz.style.display = "none"
+            oitava_quiz.style.display = "block"
+        }
+        else if(oitava_quiz.style.display == "block") {
+            oitava_quiz.style.display = "none"
+            nona_quiz.style.display = "block"
+        }
+        else if(nona_quiz.style.display == "block") {
+            nona_quiz.style.display = "none"
+            decima_quiz.style.display = "block"
+        }
+        else if(decima_quiz.style.display == "block") {
+            decima_quiz.style.display = "none"
+            resultado_quiz.style.display = "block"
+        }
+        
+        var c1 = 0 
+        for(var contador = 0 ; contador < lista_respostas.length ; contador++) {
+            c1++
+        } 
+        
+        if(lista_respostas.length >= 6) {
+            var id_img_vencedor = document.getElementById("id_img_vencedor")
+            id_img_vencedor.src = "img/gif_vencedor.gif"
+            span_resposta.innerHTML = `Parabéns você acertou ${c1} de 10`
+        } 
+        else{
+            var id_img_vencedor = document.getElementById("id_img_vencedor")
+            id_img_vencedor.src = "img/gif_serio.gif"
+            span_resposta.innerHTML = `Você só acertou ${c1} de 10`
+        }
+        
+      /*   console.log(lista_respostas) */
+
+     
+
+      /*   var lista_pergunta = [
+            {enunciado: "Qual o nome do filho do Thomas Shelby ?",
+            respostas: ["Peter", "Charles", "Will"],
+            respostacerta: 1
+        },
+            {enunciado: "Qual o irmão mais novo do Arthur Shelby ?",
+            respostas: ["Michael", "John", "Finn"],
+            respostacerta: 2
+        },
+            {enunciado: "Qual o nome da mãe do filho do Thomas ?",
+            respostas: ["Lizzie", "Grace", "Ada"],
+            respostacerta: 1
+        },
+            {enunciado: "O que a Polly é dos irmão Shelby ?",
+            respostas: ["Mãe", "Tia", "Amiga"],
+            respostacerta: 1
+        },
+            {enunciado: "Na segunda temporada Jonh Shelby casa-se, com quem ?",
+            respostas: ["Esme", "Linda", "Tatiana"],
+            respostacerta: 0
+        }, 
+        ] */
 /* 
-    var lista_primeira_resposta = []
-    var lista_segunda_resposta = []
-    var lista_terceira_resposta = [] 
+        var resposta1 = id_primeira_resposta.innerHTML
+        var resposta2 = id_segunda_resposta.innerHTML
+        var resposta3 = id_terceira_resposta.innerHTML */
+/* 
+        var respostapessoa = []
+        respostapessoa.push(resposta2) */
 
-  
+     /*    for(var posicao = 0 ; posicao < lista_pergunta.length ; posicao++) {
+            if(respostapessoa[0] == lista_pergunta[0].respostacerta){
+                alert("AAAAAAAA")
+            }
+        
+        } */
 
-function funcao_primeira_reposta() {
-         var primeira0 = "Peter"
-         var primeira1 = "AAAA"
-         var primeira2 = "BBB"
-         
 
-         
 
-        lista_primeira_resposta.push(primeira0)
+/* 
+       var lista_pergunta = [{"Pergunta1":"Qual o irmão mais novo do Arthur Shelby?"},{"Pergunta2":"Qual o nome da mãe do filho do Thomas"}] 
+
+
+        var pergunta0 = "Qual o nome do filho do Thomas Shelby?"
+        var pergunta1 = "Qual o irmão mais novo do Arthur Shelby?"
+        var pergunta2 = "Qual o nome da mãe do filho do Thomas?"
+        var pergunta3 = "O que a Polly é dos irmão Shelby?"
+        var pergunta4 = "Na segunda temporada Jonh Shelby casa-se, com quem?"
+ 
+        */
+
+
+       
+     /*    lista_primeira_resposta.push(primeira0)
         lista_primeira_resposta.push(primeira1)
         lista_primeira_resposta.push(primeira2)
 
-        verificar_resposta()
-        id_primeira_resposta.innerHTML = `${lista_primeira_resposta[0]}`
-        verificar_resposta()
+        lista_segunda_resposta.push(segunda0)
+        lista_segunda_resposta.push(segunda1)
+        lista_segunda_resposta.push(segunda2)
+
+        lista_terceira_resposta.push(terceira0)
+        lista_terceira_resposta.push(terceira1)
+        lista_terceira_resposta.push(terceira2) */
+
+   /*      if(lista_segunda_resposta[0] == "Charles"){
+            alert("testando resposta")
+            id_segunda_resposta.innerHTML = lista_segunda_resposta[1]
+        } */
+ 
+/* 
+
+        id_pergunta.innerHTML = lista_pergunta[0].Pergunta1
+        id_pergunta.innerHTML = lista_pergunta[1].Pergunta2
+        console.log("Chamei pergunta")
+        id_primeira_resposta.innerHTML = lista_primeira_resposta[1]
+        id_terceira_resposta.innerHTML = lista_terceira_resposta[1] */
+    } 
+
+
+    function errar() {
+
+
+        if(primeiro_quiz.style.display == "block") {
+            primeiro_quiz.style.display = "none"
+            segundo_quiz.style.display = "block"
+        } 
+
+       else if(segundo_quiz.style.display == "block") {
+            segundo_quiz.style.display = "none"
+            terceiro_quiz.style.display = "block"
+        } 
+
+       else if(terceiro_quiz.style.display == "block") {
+            terceiro_quiz.style.display = "none"
+            quarta_quiz.style.display = "block"
+        } 
+
+       else if(quarta_quiz.style.display == "block") {
+            quarta_quiz.style.display = "none"
+            quinta_quiz.style.display = "block"
+        } 
         
-
-}
-
-
-function verificar_resposta() {
-
-   
-        if(id_primeira_resposta.innerHTML == lista_primeira_resposta[0]) {
-         alert("ACertou")
+        else if(quinta_quiz.style.display == "block") {
+            quinta_quiz.style.display = "none"
+            sexta_quiz.style.display = "block"
         }
-        id_primeira_resposta.innerHTML = `${lista_primeira_resposta[1]}`
-   
-        if(id_primeira_resposta.innerHTML == lista_primeira_resposta[1]) {
-         alert("ACertouaaaa")
+        else if(sexta_quiz.style.display == "block") {
+            sexta_quiz.style.display = "none"
+            setima_quiz.style.display = "block"
+        }
+        else if(setima_quiz.style.display == "block") {
+            setima_quiz.style.display = "none"
+            oitava_quiz.style.display = "block"
+        }
+        else if(oitava_quiz.style.display == "block") {
+            oitava_quiz.style.display = "none"
+            nona_quiz.style.display = "block"
+        }
+        else if(nona_quiz.style.display == "block") {
+            nona_quiz.style.display = "none"
+            decima_quiz.style.display = "block"
+        }
+        else if(decima_quiz.style.display == "block") {
+            decima_quiz.style.display = "none"
+            resultado_quiz.style.display = "block"
         }
 
-} */
+var c2 = 0 
+        for(var contador = 0 ; contador < lista_respostas.length ; contador++) {
+            c2++
+        } 
 
-var lista_acertos = []
-var acerto = 0
+        if(lista_respostas.length >= 6) {
+            var id_img_vencedor = document.getElementById("id_img_vencedor")
+            id_img_vencedor.src = "img/gif_vencedor.gif"
+            span_resposta.innerHTML = `Parabéns você acertou ${c1} de 10`
+        } 
+        else{
+            var id_img_vencedor = document.getElementById("id_img_vencedor")
+            id_img_vencedor.src = "img/gif_serio.gif"
+            span_resposta.innerHTML = `Você só acertou ${c1} de 10`
+        }
 
-function acertou(){ 
-    if(primeiro_quiz.style.display == "block") {
-        primeiro_quiz.style.display = "none"
-        segundo_quiz.style.display = "block"
-        acerto++
     }
-}
-
-function errou(){ 
-    if(primeiro_quiz.style.display == "block") {
-        primeiro_quiz.style.display = "none"
-        segundo_quiz.style.display = "block"
-       
-    }
-}
 </script>
