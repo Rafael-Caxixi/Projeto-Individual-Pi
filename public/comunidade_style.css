@@ -45,6 +45,26 @@ body {
     text-shadow:rgb(228, 202, 226) ;
   }
 
+  #titulo_comentario{
+    color: white;
+    background-color: #555;
+    width: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+  }
+
+  #titulo_mural {
+    color: white;
+    background-color: #555;
+    width: 270px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+  }
+
   .imagem_fundo {
     height: 100vh;
     width: 100%;
@@ -58,7 +78,7 @@ body {
   
   #comentario_usuario {
     height:100px ;
-    width:550px;
+    width:450px;
     background-color: #555;
     border-radius: 10px;
     border-color: black;
@@ -66,16 +86,31 @@ body {
     color: white;
     font-size: 20px;
     font-family: 'Roboto', sans-serif;
+
   }
 
   .div-form {
-    height: 50%;
+    height: 25%;
     width: 60%;
     font-size: 20px;
     color: white;
     margin-left: -38%;
     
   }
+
+  .div-form button {
+    height: 40px;
+    width: 80px;
+    background-color: black;
+    color: white;
+    border-color: white;
+    border-style: solid;
+    border-radius: 10px;
+    border-width: 1px;
+    cursor: pointer;
+  }
+
+
 
   #imagem_fundo_a {
     width: 100%;
@@ -139,7 +174,7 @@ body {
   
   .container {
       background-color: #161720e8;
-      height: 107.9vh;
+      min-height: 107.9vh;
       width: 100%;
       display: flex;
       flex-direction: column;
@@ -204,7 +239,7 @@ body {
    font-size: 28px;
    margin-top: 2%;
  }
-
+/* 
  #botao_enviar {
    width: 80px;
    height: 35px;
@@ -215,8 +250,17 @@ body {
    font-weight: bold;
    font-size: 20px;
    cursor: pointer;
-   margin-top: 10px;
+   margin-top: 12px;
    margin-left: -78%;
+ } */
+
+ #button_enviar {
+   background-color: rgb(0, 0, 0);
+   color: white;
+   font-family: 'Roboto', sans-serif;
+   font-weight: bold;
+
+
  }
 
  #criar_div {
@@ -232,4 +276,59 @@ body {
    height: 30%;
    width: 90%;
    margin-left: 10%; 
+   color: white;
  }
+
+ b {
+   height: 500px;
+   width: 110px;
+   font-size: 20px;
+   color: rgb(255, 255, 255);
+  }
+
+ .publicacao-descricao {
+   background-color: #442459;
+   height: 100px;
+   width: 300px;
+   word-break: break-all;
+   border: 2px solid;
+   border-radius: 10px;
+ }
+
+ .div-buttons {
+   margin-bottom: 20px;
+   font-family: 'Roboto', sans-serif;
+ }
+
+#nome_comentario {
+  background-color: aqua;
+}
+
+#btnDeletarundefined {
+  background-color: rgb(0, 0, 0);
+  color: white;
+  font-size: 15px;
+  width: 80px;
+  margin-top: 5px;
+  height: 23px;
+  border: 1px solid #FFF;
+  border-radius: 10px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.publicacao-btn-editar {
+  background-color: rgb(0, 0, 0);
+  color: white;
+  font-size: 15px;
+  width: 80px;
+  margin-top: 5px;
+  height: 23px;
+  border: 1px solid #FFF;
+  border-radius: 10px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  cursor: pointer;
+}
+

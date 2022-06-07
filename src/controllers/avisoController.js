@@ -72,7 +72,7 @@ function publicar(req, res) {
 
     if (comentario_usuario == undefined) {
         res.status(400).send("O título está indefinido!");
-    }else if (idUsuario == undefined) {
+    } else if (idUsuario == undefined) {
         res.status(403).send("O id do usuário está indefinido!");
     } else {
         avisoModel.publicar(idUsuario, comentario_usuario)
@@ -112,9 +112,12 @@ function editar(req, res) {
 }
 
 function deletar(req, res) {
-    var idAviso = req.params.idAviso;
+    var idAviso1 = req.params.idAviso;
+    var idUsuario = req.params.idUsuario;
+/*     var id_comentario = req.body.id_comentario */
+    
 
-    avisoModel.deletar(idAviso)
+    avisoModel.deletar(idAviso1)
         .then(
             function (resultado) {
                 res.json(resultado);

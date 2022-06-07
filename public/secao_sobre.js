@@ -77,21 +77,7 @@ var slide_1 = document.getElementById("img1")
 var slide_2 = document.getElementById("img2")
 var slide_3 = document.getElementById("img3")
 
-function input1() {
-   
-   
-} 
 
-function input2() {
-    
-
-}
-
-function input3() {
-    /* slide_1.classList.remove("first");
-    slide_2.classList.add("first"); */
-    
-}
 
 
 fetch("/usuarios/autenticar", {
@@ -157,8 +143,13 @@ function escolher_perso(num) {
 
         console.log("resposta: ", resposta)
 
+        
+
         if (resposta.ok) {
             console.log(resposta);
+
+           
+            
             alert('Personagem atualizado')
             if(num == 1){
                 sessionStorage.NOME_PERSONAGEM = "Arthur Shelby" 

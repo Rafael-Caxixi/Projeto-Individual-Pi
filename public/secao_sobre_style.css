@@ -126,10 +126,10 @@ body {
   }
 
   .div_nome {
-    width: 100%;
+    width: 25%;
+    margin-left: 38%;
     height: 40%;
     display: flex;
-    justify-content: center;
     align-items:flex-end;
     font-size: 25px;
     font-weight: bold;
@@ -139,6 +139,7 @@ body {
 
   .div_nome b {
     color: #ffc500;
+    margin-left: 5%;
   }
 
   .div_perso_votado {
@@ -164,7 +165,7 @@ body {
   }
 
   .frase_escolha {
-    background-color: rgb(40, 40, 51);
+    background-color: #555;
     height: 6vh;
     width: 38%;
     border-radius: 13px;
@@ -410,7 +411,6 @@ body {
     height: 70%;
     width: 70%;
     margin-left: 15%;
-    margin-top: 5%;
     
   }
   
@@ -420,6 +420,103 @@ body {
     border-radius: 10px;
 
   }
+
+  #button_restart {
+    background-color: rgb(0, 0, 0);
+    color: white;
+    width: 130px;
+    height: 35px;
+    border-radius: 10px;
+    border: 2px solid white;
+    margin-top: -18%;
+    cursor: pointer;
+  }
+
+  .quiz_personagem {
+    background-color: rgb(110, 101, 101);
+    height: 60vh;
+    width: 50vw;
+    margin-left: 25%;
+    margin-top: 10%;
+    border-radius: 10px;
+  }
+
+  .titulo_quiz_perso {
+    height: 13%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    color: rgb(0, 0, 0);
+  }
+
+  .pergunta_quiz_perso {
+    height: 13%;
+    width: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+  }
+
+   #botao_fechar_quiz {
+    height: 40px;
+    width: 50px;
+    cursor: pointer;
+    margin-left: 91%;
+    display: flex;
+    justify-content: end;
+  } 
+  
+  .teste {
+    height: 1%;
+    width: 100%;
+  }
+
+  .div_respostas_quiz_perso {
+    height: 55%;
+    width: 100%;
+  }
+
+  .resposta_quiz_perso {
+    height: 50px;
+    width: 300px;
+    font-size: 20px;
+    border-radius: 10px;
+    background-color: #555;
+    color: black;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 10px;
+    cursor: pointer;
+  }
+
+  .resposta_quiz_perso:hover {
+    background-color: #FFF;
+  }
+
+  .tela_todo {
+    height: 102vh;
+    width: 100vw;
+    overflow-y: hidden;
+    position: fixed;
+    margin-top: -14vh;
+    z-index: 99999999;
+    background-color: rgba(0, 0, 0, 0.623);
+    display: none;
+  }
+ 
+
+
+  
 
 
   

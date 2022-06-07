@@ -14,7 +14,7 @@ function entrar(email, senha) {
     var instrucao = `
         SELECT * FROM usuario  WHERE email_usuario = '${email}' AND senha_usuario = '${senha}';
     `;
-   
+   /* join personagem on id_personagem = fk_personagem */   /* caso de erro */
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
 }

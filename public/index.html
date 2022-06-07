@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fórum | Peaky Blinders</title>
+    <title>Peaky Blinders</title>
     <link rel="stylesheet" href="index_style.css">
     <script src="main.js"></script>
     <script src="secao_sobre.js"></script>
@@ -133,16 +133,27 @@
 
     function funcao_perdido() {
         if (div_trocar.style.display == 'block') {
-            div_trocar.style.transition = 'opacity 0.5s ease'
+            div_trocar.style.transition = 'opacity 0.2s ease'
+            
             div_trocar.style.display = 'none'
+            caixa_branca_cadastro.style.width = '55%'
+            caixa_branca_cadastro.style.marginLeft = '22%'
+            caixa_sobre.style.width = '100%'
             trocar_p_login.style.display = 'none'
             caixa_sobre.style.display = 'block'
             botao_perdido.innerHTML = "Voltar"
+
+            
         }
         else if (caixa_sobre.style.display == 'block') {
             caixa_sobre.style.display = 'none'
+            caixa_branca_cadastro.style.width = '50%'
+            caixa_branca_cadastro.style.marginLeft = '25%'
             div_trocar.style.display = 'block'
             botao_perdido.innerHTML = "Ta perdido ?"
+            trocar_p_login.style.transition = 'opacity 0.2s ease'
+            trocar_p_login.style.opacity = 0
+            
         }
         
       /*    else if (trocar_p_login.style.display == 'block') {

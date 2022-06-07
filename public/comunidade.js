@@ -55,9 +55,9 @@ function sair_cadastro() {
 
     }
 
-    function deletar(idAviso) {
+    function deletar(id_comentario) {
         console.log("Criar função de apagar post escolhido - ID" + idAviso);
-        fetch(`/avisos/deletar/${idAviso}`, {
+        fetch(`/avisos/deletar/${id_comentario}`, {
             method: "DELETE",
             headers: {
                 "Content-Type": "application/json"
