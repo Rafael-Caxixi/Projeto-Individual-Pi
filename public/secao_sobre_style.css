@@ -127,7 +127,7 @@ body {
 
   .div_nome {
     width: 25%;
-    margin-left: 38%;
+    margin-left: 42%;
     height: 40%;
     display: flex;
     align-items:flex-end;
@@ -512,6 +512,10 @@ body {
     z-index: 99999999;
     background-color: rgba(0, 0, 0, 0.623);
     display: none;
+  }
+
+  #nome_personagem_votado {
+    margin-left: 10px;
   }
  
 

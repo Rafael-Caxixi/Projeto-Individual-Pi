@@ -82,7 +82,7 @@ function funcao_clique_aqui() {
 
 
  function validar_nome() {
-    if(input_nome.value.length <= 3) {
+    if(input_nome.value.length <= 2) {
         input_nome.style.borderColor = 'red'
     }
     else {
