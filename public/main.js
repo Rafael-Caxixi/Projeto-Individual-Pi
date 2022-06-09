@@ -108,14 +108,14 @@ function validar_email() {
     }
 }
 
-function validar_cep() {
+ function validar_cep() {
     if(input_cep.value.length < 8) {
         input_cep.style.borderColor = 'red'
     }
     else {
         input_cep.style.borderColor = 'green'
     }
-}
+} 
 
 function validar_senha() {
     if(input_senha.value.length < 8) {
@@ -255,14 +255,14 @@ function validar_confirmar_senha() {
                 resposta.json().then(json => {
                     console.log(json);
                     console.log(JSON.stringify(json));
-
-    
+                    
+                    
                     sessionStorage.EMAIL_USUARIO = json.email_usuario;
                     sessionStorage.NOME_USUARIO = json.nome_usuario;
                     sessionStorage.ID_USUARIO = json.id_usuario;
-                     sessionStorage.NOME_PERSONAGEM = json.nome_personagem; 
+                    sessionStorage.NOME_PERSONAGEM = json.nome_personagem; 
                     
-    
+                    
                     setTimeout(function () {
                         window.location = "secao_sobre.html";
                     }, 1000); // apenas para exibir o loading
@@ -274,7 +274,7 @@ function validar_confirmar_senha() {
                 console.log("Houve um erro ao tentar realizar o login!");
                 alert("Erro ao efetuar login")
                 
-    
+                
                 resposta.text().then(texto => {
                     console.error(texto);
                 });
@@ -286,8 +286,9 @@ function validar_confirmar_senha() {
 
     }    
 
-
+    
 }
+
 
 /* 
 function validarSessao() {
@@ -310,7 +311,7 @@ function validarSessao() {
     }
 }
 */
-function finalizarAguardar(texto) {
+ /* function finalizarAguardar(texto) {
     var divAguardar = document.getElementById("div_aguardar");
     divAguardar.style.display = "none";
 
@@ -318,4 +319,4 @@ function finalizarAguardar(texto) {
     if (texto) {
         divErrosLogin.innerHTML = texto;
     }
-}
+}  */

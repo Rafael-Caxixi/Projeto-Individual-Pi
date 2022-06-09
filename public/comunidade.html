@@ -170,7 +170,7 @@
             console.log("resposta: ", resposta);
 
             if (resposta.ok) {
-                window.alert("Post realizado com sucesso pelo usuario de ID: " + idUsuario + "!");
+                window.alert("Post realizado por: " + sessionStorage.getItem("NOME_USUARIO") + "!");
                 finalizarAguardar();
                 window.location.reload()
             } else if (resposta.status == 404) {
@@ -209,7 +209,7 @@
         }).then(function (resposta) {
 
             if (resposta.ok) {
-                window.alert("Post deletado com sucesso pelo usuario de email: " + sessionStorage.getItem("EMAIL_USUARIO") + "!");
+                window.alert("Post deletado por: " + sessionStorage.getItem("NOME_USUARIO") + "!");
                 window.location = "comunidade.html"
             } else if (resposta.status == 404) {
                 window.alert("Deu 404!");

@@ -10,6 +10,7 @@
     <script src="secao_sobre.js"></script>
     <script src="main.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.8/dist/sweetalert2.all.min.js"></script>
 </head>
 
 <body onload="validarSessaoHtml()">
@@ -509,16 +510,23 @@
     }
 
 
+  
+       
+    if(sessionStorage.NOME_PERSONAGEM == "null"){
+        nome_personagem_votado.innerHTML = "Ainda não votou"
+    }else {
+        nome_personagem_votado.innerHTML = sessionStorage.NOME_PERSONAGEM 
 
-    nome_personagem_votado.innerHTML = sessionStorage.NOME_PERSONAGEM
-
+    }
+     
+   /*  var perso = sessionStorage.NOME_PERSONAGEM  */
     function validarSessaoHtml() {
         // aguardar();
-        console.log("Chamei validar sessao dentro do main.js")
         var nome = sessionStorage.NOME_USUARIO;
-
+        console.log("Chamei validar sessao dentro do main.js")
+        
         var span_nome_usuario = document.getElementById("span_nome_usuario");
-
+        
         if (nome != null) {
             // window.alert(`Seja bem-vindo, ${nome}!`);
             span_nome_usuario.innerHTML = nome + " ";

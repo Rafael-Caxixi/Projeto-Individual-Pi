@@ -29,7 +29,7 @@ function sair_cadastro() {
             console.log("resposta: ", resposta);
 
             if (resposta.ok) {
-                window.alert("Post realizado com sucesso pelo usuario de ID: " + idUsuario + "!");
+                window.alert("Post realizado por " + idUsuario + "!");
                 window.location = "/dashboard/mural.html";
                 limparFormulario();
                 finalizarAguardar();
@@ -165,4 +165,4 @@ function sair_cadastro() {
         finalizarAguardar();
 
         return false;
-    }
+    } 
