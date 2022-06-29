@@ -7,7 +7,8 @@ function listar() {
             u.id_usuario,
             u.nome_usuario ,
             a.comentario_usuario,
-            a.id_comentario
+            a.id_comentario,
+            date_format(a.horario, '%Y-%m-%d') as 'horario'
             FROM comentario a
             INNER JOIN usuario u
             ON a.fk_usuario = u.id_usuario;
@@ -62,7 +63,7 @@ function listarPorUsuario(idUsuario, comentario_usuario) {
 function publicar(idUsuario, comentario_usuario) {
     console.log("ACESSEI O AVISO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function publicar(): ", idUsuario, comentario_usuario);
     var instrucao = `
-        INSERT INTO comentario (fk_usuario, comentario_usuario) VALUES (${idUsuario},'${comentario_usuario}');
+        INSERT INTO comentario (fk_usuario, comentario_usuario) VALUES (${idUsuario}, '${comentario_usuario}');
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
@@ -85,6 +86,17 @@ function deletar(idAviso1) {
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
 }
+/* 
+function PuxarHorarioComentario(idUsuario) {
+    console.log("ACESSEI O AVISO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function deletar():", idAviso1);
+    var instrucao = `
+
+    select date_format(horario, '%Y-%m-%d') as horario from comentario where fk_usuario = '${idUsuario}' ;
+       
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+} */
 
 
 module.exports = {
@@ -94,5 +106,5 @@ module.exports = {
     publicar,
     editar,
     deletar,
-
+  /*   PuxarHorarioComentario */
 }

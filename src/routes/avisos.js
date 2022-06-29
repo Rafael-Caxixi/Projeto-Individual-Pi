@@ -31,4 +31,8 @@ router.delete("/deletar/:idAviso", function (req, res) {
     avisoController.deletar(req, res);
 });
 
+/* router.post("/PuxarHorarioComentario/:idAviso", function (req, res) {
+    avisoController.PuxarHorarioComentario(req, res);
+}); */
+
 module.exports = router;

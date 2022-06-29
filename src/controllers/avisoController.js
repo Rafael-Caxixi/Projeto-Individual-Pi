@@ -131,7 +131,29 @@ function deletar(req, res) {
             }
         );
 }
+/* 
+function PuxarHorarioComentario(req, res) {
+    var idAviso1 = req.params.idAviso;
+    var idUsuario = req.params.idUsuario;
+    var horario = req.params.horario
+     var id_comentario = req.body.id_comentario 
+    
 
+    avisoModel.publicar(idAviso1)
+        .then(
+            function (resultado) {
+                res.json(resultado);
+            }
+        )
+        .catch(
+            function (erro) {
+                console.log(erro);
+                console.log("Houve um erro ao deletar o post: ", erro.sqlMessage);
+                res.status(500).json(erro.sqlMessage);
+            }
+        ); 
+}
+ */
 module.exports = {
     testar,
     listar,

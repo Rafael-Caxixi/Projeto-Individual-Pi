@@ -261,7 +261,7 @@ function validar_confirmar_senha() {
                     sessionStorage.NOME_USUARIO = json.nome_usuario;
                     sessionStorage.ID_USUARIO = json.id_usuario;
                     sessionStorage.NOME_PERSONAGEM = json.nome_personagem; 
-                    
+                    sessionStorage.HORARIO_COMENTARIO = json.horario;
                     
                     setTimeout(function () {
                         window.location = "secao_sobre.html";

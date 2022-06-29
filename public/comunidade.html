@@ -154,7 +154,7 @@
     function publicar() {
         var idUsuario = sessionStorage.ID_USUARIO;
         var comentario_usuario1 = comentario_usuario.value
-
+        
         var corpo = {
             comentario_usuario: comentario_usuario1
         }
@@ -170,7 +170,7 @@
             console.log("resposta: ", resposta);
 
             if (resposta.ok) {
-                window.alert("Post realizado por: " + sessionStorage.getItem("NOME_USUARIO") + "!");
+                window.alert("Post realizado por: " + sessionStorage.getItem("NOME_USUARIO") + "!" );
                 finalizarAguardar();
                 window.location.reload()
             } else if (resposta.status == 404) {
@@ -248,12 +248,14 @@
                         // criando e manipulando elementos do HTML via JavaScript
                         var divPublicacao = document.createElement("div");
                         var spanNome = document.createElement("span");
+                        var spanHorario = document.createElement("span");
                         var divDescricao = document.createElement("div");
                         var divButtons = document.createElement("div");
                         var btnDeletar = document.createElement("button");
 
 
-                        spanNome.innerHTML = "<b>" +  publicacao.nome_usuario + "</b>";
+                        spanNome.innerHTML = "<b>" +  publicacao.nome_usuario + " " +  publicacao.horario + "</b>";
+                      /*   spanHorario.innerHTML = "<b>" +  publicacao.horario + "</b>"; */
                         divDescricao.innerHTML = "  <b>" + publicacao.comentario_usuario + "</b>";
                         btnDeletar.innerHTML = "Deletar";
 
@@ -272,6 +274,7 @@
                         divPublicacao.appendChild(divButtons);
                         divButtons.appendChild(btnDeletar);
                         feed.appendChild(divPublicacao);
+                        divPublicacao.appendChild(spanHorario)
                     }
 
                     finalizarAguardar();
